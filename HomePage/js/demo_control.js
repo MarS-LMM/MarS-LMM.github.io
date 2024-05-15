@@ -1269,7 +1269,7 @@ function drawMainChart1(container, chartContainer) {
             color: alldata[random].close > alldata[random].open ? '#26a69a' : '#ef5350'
         }
         volumeSeries.setData(volumeData)
-    }, 1000);
+    }, 200);
 
     const bidsContainer = container.querySelector('#bids');
     const asksContainer = container.querySelector('#asks');
@@ -3469,8 +3469,7 @@ function static_chart_demo2(contrainer) {
         for (var i = 0; i < 50; i++) {
             categoryData.push(rawData[i]);
             values.push(data[i].value);
-            const bids = generateOrderLevels('bid', 5, 62, false);
-            volume.push(bids[0].volume);
+            volume.push(Math.floor(Math.random() * 800));
             TWAPData.push(null);
             rollout.push(null);
             value2.push(null)
@@ -3863,8 +3862,7 @@ function drawDemo2V1(contrainer, downloadButtonContainer) {
         for (var i = 0; i <= 50; i++) {
             categoryData.push(rawData[i]);
             values.push(data[i].value);
-            const bids = generateOrderLevels('bid', 5, 62, false);
-            volume.push(bids[0].volume);
+            volume.push(Math.floor(Math.random() * 800));
             TWAPData.push(null);
             rollout.push(null);
             if (i == 50) {
@@ -3967,6 +3965,7 @@ function drawDemo2V1(contrainer, downloadButtonContainer) {
                 data: data0.values,
                 type: 'line',
                 symbol: 'none',
+                animation: false,
                 yAxisIndex: 0,
                 lineStyle: {
                     width: 3,
@@ -3982,6 +3981,7 @@ function drawDemo2V1(contrainer, downloadButtonContainer) {
                         padding: [4, 8],
                         lineHeight: 16
                     },
+                    animation: false,
                     data: [{
                         yAxis: data0.values[data0.values.length - 1],
                     }]
@@ -3992,6 +3992,7 @@ function drawDemo2V1(contrainer, downloadButtonContainer) {
         },
             {
                 name: 'Rollout Volume',
+                animation: false,
                 type: 'bar',
                 stack: 'one',
                 yAxisIndex: 1,
@@ -4008,6 +4009,7 @@ function drawDemo2V1(contrainer, downloadButtonContainer) {
     },
             {
                 name: 'TWAP agent volume',
+                animation: false,
                 type: 'bar',
                 stack: 'one',
                 yAxisIndex: 1,
@@ -4025,6 +4027,7 @@ function drawDemo2V1(contrainer, downloadButtonContainer) {
             {
 
                 name: 'Replay Volume',
+                animation: false,
                 type: 'bar',
                 data: data0.volume,
                 stack: 'two',
@@ -4038,6 +4041,7 @@ function drawDemo2V1(contrainer, downloadButtonContainer) {
                 data: data0.value2,
                 type: 'line',
                 symbol: 'none',
+                animation: false,
                 yAxisIndex: 0,
                 lineStyle: {
                     width: 3,
@@ -4047,6 +4051,7 @@ function drawDemo2V1(contrainer, downloadButtonContainer) {
                     lineStyle: {
                         color: 'rgba(197, 124, 97, 1)'
                     },
+                    animation: false,
                     label: {
                         color: '#fff',
                         backgroundColor: 'rgba(197, 124, 97, 1)',
@@ -4081,12 +4086,15 @@ function drawDemo2V1(contrainer, downloadButtonContainer) {
         } else {
             n = 0
             current++;
+        }
+        if (current % 5 == 0 && n == 0) {
             markpointArr.push({
                 value: 'S',
                 symbolSize: 30,
                 itemStyle: {
                     color: '#ea5760'
                 },
+                animation: false,
                 label: {
                     color: '#fff'
                 },
@@ -4100,6 +4108,7 @@ function drawDemo2V1(contrainer, downloadButtonContainer) {
                 itemStyle: {
                     color: '#4fc787'
                 },
+                animation: false,
                 label: {
                     offset: [0, 7],
                     color: '#fff'
@@ -4109,12 +4118,11 @@ function drawDemo2V1(contrainer, downloadButtonContainer) {
             })
         }
         $('#tooltip').hide();
-        data0.categoryData[current] = result[current]
-        data0.values[current] = data[Math.floor(Math.random() * 60)].value
-        const bids = generateOrderLevels('bid', 5, 62, false);
-        data0.volume[current] = bids[0].volume;
-        data0.TWAP[current] = Math.floor(Math.random() * 800);
-        data0.rollout[current] = Math.floor(Math.random() * 500);
+        data0.categoryData[current] = result[current];
+        data0.values[current] = data[Math.floor(Math.random() * 60)].value;
+        data0.volume[current] = data0.volume[current] ? Math.floor(Math.random() * 200) + data0.volume[current] : Math.floor(Math.random() * 200);
+        data0.TWAP[current] = data0.TWAP[current] ? data0.TWAP[current] + Math.floor(Math.random() * 100) : Math.floor(Math.random() * 100);
+        data0.rollout[current] = data0.rollout[current] ? data0.rollout[current] + Math.floor(Math.random() * 100) : Math.floor(Math.random() * 100);
         data0.value2[current] = data[Math.ceil(Math.random() * 50)].value;
         if (data0.TWAP[current] > 300) {
             $('#tooltip').text('TWAP agent 成交量占比超过xx%').show();
@@ -4158,7 +4166,7 @@ function drawDemo2V1(contrainer, downloadButtonContainer) {
                 },
         ]
         })
-    }, 1000);
+    }, 200);
 
     return intervalId;
 }
