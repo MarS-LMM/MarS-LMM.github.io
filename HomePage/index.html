@@ -4099,8 +4099,8 @@
                                                     <th colspan="2" style="text-align: center;">Orderbook</th>
                                                 </tr>
                                                 <tr>
-                                                    <th>Price</th>
-                                                    <th>Volume</th>
+                                                    <th style="width: 50%; padding: 10px;">Price</th>
+                                                    <th style="width: 50%; padding: 10px;">Volume</th>
                                                 </tr>
                                             </thead>
                                             <tbody id="asks"></tbody>
@@ -4447,6 +4447,24 @@
     const mainChart = mainContainer.querySelector("#chart-container");
     const mainSelectInput = document.getElementById("main-select");
 
+    const ground_truth_kline_urls = [
+        "demo_data/demo_kline_groundtruth_rollouts-002180-2023-06-02-09:45:00-16.json",
+        "demo_data/demo_kline_groundtruth_rollouts-002832-2023-06-08-09:45:00-16.json",
+        "demo_data/demo_kline_groundtruth_rollouts-002493-2023-03-24-09:45:00-16.json"
+    ]
+    const rollout_kline_urls = [
+        "demo_data/demo_kline_rollouts-002180-2023-06-02-09:45:00-16.json",
+        "demo_data/demo_kline_rollouts-002832-2023-06-08-09:45:00-16.json",
+        "demo_data/demo_kline_rollouts-002493-2023-03-24-09:45:00-16.json"
+    ]
+    const lobsnapshots_urls = [
+        "demo_data/demo_lobsnapshots_rollouts-002180-2023-06-02-09:45:00-16.json",
+        'demo_data/demo_lobsnapshots_rollouts-002832-2023-06-08-09:45:00-16.json',
+        "demo_data/demo_lobsnapshots_rollouts-002493-2023-03-24-09:45:00-16.json"
+    ]
+    
+
+
     // 定义一个对象,存储不同输入组合对应的 GIF 或视频 URL
     const mainFunctions = {
         '1': drawMainChart1,
@@ -4471,7 +4489,7 @@
                 clearInterval(orderbookMainIntervalId);
             }
             console.log("Print mainContainer", mainContainer)
-            var tempIntervalIds = mainFunctions[key](mainContainer, mainChart);
+            var tempIntervalIds = mainFunctions[key](mainContainer, mainChart, ground_truth_kline_urls[selectedOption - 1], rollout_kline_urls[selectedOption - 1], lobsnapshots_urls[selectedOption - 1]);
             chartMainIntervalId = tempIntervalIds.chartIntervalId;
             orderbookMainIntervalId = tempIntervalIds.orderbookIntervalId;
         } else {
