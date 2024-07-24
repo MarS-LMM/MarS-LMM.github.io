@@ -3776,15 +3776,226 @@
             aspect-ratio: 1.753;
         }
     </style>
+    <style data-emotion="css 14r34si">
+        .css-14r34si {
+            background-color: #FFFFFF;
+        }
+    </style>
+    <style>
+        .dropdown-content a {
+            display: block;
+            padding: 8px 16px;
+            text-decoration: none;
+            color: black;
+            background-color: white;
+            border: none;
+        }
+
+        .dropdown-label {
+            position: relative;
+            /* 设置相对定位，作为下拉菜单定位的参考 */
+            display: inline-block;
+            /* 让按钮不占据全行 */
+        }
+
+        .dropdown-content {
+            font-family: "Segoe Pro Semibold Italic";
+            position: absolute;
+            /* 绝对定位，相对于它的父元素（按钮） */
+            left: 0;
+            /* 从按钮的最左边开始 */
+            /* left: auto; */
+            /* 不再与左侧对齐 */
+            /* right: 0; */
+            /* 与父元素右侧对齐 */
+            top: 100%;
+            /* 位于按钮的正下方 */
+            z-index: 1;
+            /* 确保下拉内容位于页面其他内容上方 */
+            background-color: white;
+            /* 设置背景颜色 */
+            min-width: 100%;
+            /* 最小宽度与按钮宽度一致 */
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            /* 添加一些阴影效果 */
+            border-radius: 4px;
+            /* 可选：添加圆角 */
+        }
+
+        /* 当鼠标悬停在下拉内容的选项上时，改变背景色 */
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        #nav-dropdown {
+            /* max-width: 300px; */
+            /* 设置最大宽度 */
+            /* 或 */
+            width: 200px;
+            /* 设置固定宽度 */
+        }
+
+        #gif-container {
+            width: 100%;
+            height: 500px;
+            /* background-color: #f5f5f5; */
+            /* 透明的 background */
+            background-color: transparent;
+            /* background:rgba(250, 253, 93, 1) */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 1000px;
+            opacity: 0.5;
+        }
+        #tooltip {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #fff;
+            font-size: 14px;
+            padding: 4px 8px;
+            background-color: #135D66;
+            border-radius: 4px;
+            border: 1px solid #31919c;
+            display: none;
+            z-index: 99;
+        }
+        #orderbook1 {
+            opacity: 0.4;
+        }
+
+        .custom-select {
+            font-family: 'Segoe Pro Display Bold';
+            background-color: #f8f9fa;
+            border-color: #dee2e6;
+            border-radius: 0.25rem;
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #495057;
+        }
+
+        .custom-radio .form-check-input {
+            margin-top: 0.25rem;
+            margin-left: 1.25rem;
+        }
+
+        .custom-radio .form-check-label {
+            font-family: 'Segoe Pro Display Bold', sans-serif;
+            padding-left: 0.5em;
+            font-size: 1rem;
+            line-height: 1.5;
+            /* color: #495057; */
+            color: #FFFFFF;
+        }
+
+        .custom-radio-color .form-check-input:checked {
+            background-color: transparent;
+            border-color: #135D66;
+            /* 修改为你想要的边框颜色 */
+        }
+
+        .custom-radio-color .form-check-input:checked:after {
+            content: "";
+            display: block;
+            width: 10px;
+            /* 调整圆圈大小 */
+            height: 10px;
+            /* 调整圆圈大小 */
+            border-radius: 50%;
+            background-color: #135D66;
+            /* 修改为你想要的圆圈颜色 */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .button-group .btn {
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            border-radius: 0.25rem;
+            font-family: 'Segoe Pro Display Bold';
+        }
+
+        .button-group .btn-primary {
+            background-color: rgba(19, 40, 153, 1.0);
+            border-color: rgba(19, 40, 153, 1.0);
+        }
+
+        .button-group .btn-secondary {
+            background-color: #6c757d;
+            border-color: #6c757d;
+        }
+
+        #download-button-container-demo1 {
+            margin-top: 20px;
+        }
+
+        #download-button-demo1 {
+            width: 100%;
+            background-color: rgba(19, 40, 153, 1.0);
+            border-color: rgba(19, 40, 153, 1.0);
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            border-radius: 0.25rem;
+            font-family: 'Segoe Pro Display Bold';
+        }
+
+        #download-button-container-demo2 {
+            margin-top: 20px;
+        }
+
+        #download-button-demo2 {
+            width: 100%;
+            background-color: #135D66;
+            border-color: #135D66;
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            border-radius: 0.25rem;
+            font-family: 'Segoe Pro Display Bold';
+        }
+
+        .font-display-bold {
+            font-family: 'Segoe Pro Display Bold';
+            font-weight: normal;
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 5%;
+            /* 控制箭头按钮宽度 */
+        }
+
+        .carousel-control-prev {
+            left: -5%;
+            /* 将左箭头向外移动 */
+        }
+
+        .carousel-control-next {
+            right: -5%;
+            /* 将右箭头向外移动 */
+        }
+
+        .carousel-inner img {
+            width: 90%;
+            height: 100%;
+            /* 设置图片宽度，根据箭头宽度进行调整 */
+            margin: auto;
+            /* 水平居中图片 */
+        }
+    </style>    
 </head>
 
 <body>
     <!-- <html lang="en"> -->
 
-    <head></head>
+    <!-- <head></head> -->
 
     <!-- <body> -->
-        <style data-emotion="css 14r34si">
+        <!-- <style data-emotion="css 14r34si">
             .css-14r34si {
                 background-color: #FFFFFF;
             }
@@ -3994,7 +4205,7 @@
                 margin: auto;
                 /* 水平居中图片 */
             }
-        </style>
+        </style> -->
         <div id="app" class="css-14r34si"><a href="#main" class="css-1xx7x66">Skip to main content</a>
             <div class="css-1v3heaz">
                 <!-- 导航栏 -->
