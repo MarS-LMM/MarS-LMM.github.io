@@ -3206,7 +3206,8 @@
             letter-spacing: inherit;
             width: 100%;
             border-radius: clamp(4px, 1vw, 12px);
-            webkit-mask-image: -webkit-radial-gradient(white, black);
+            -webkit-mask-image: -webkit-radial-gradient(white, black); /* 保持这个用于旧版浏览器 */
+            mask-image: radial-gradient(white, black); /* 标准属性 */
             box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.2);
             -webkit-transform: translateZ(0);
             -moz-transform: translateZ(0);
