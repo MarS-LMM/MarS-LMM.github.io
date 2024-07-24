@@ -2867,10 +2867,7 @@
         }
         
         .css-rhpgco {
-            --max-col-width: calc(var(--col-width) * 22);
-            --max-viewport-width: calc(100vw - 2 * var(--gutter));
-        
-            max-width: min(var(--max-col-width), var(--max-viewport-width));
+            max-width: min(calc(var(--col-width) * 22), calc(100vw - 2 * var(--gutter)));
             margin: 0 auto;
         }
         
@@ -3174,7 +3171,7 @@
         .css-63xbd6 {
             width: 100%;
             border-radius: clamp(4px, 1vw, 12px);
-            webkit-mask-image: -webkit-radial-gradient(white, black);
+            -webkit-mask-image: -webkit-radial-gradient(white, black);
             box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.2);
             -webkit-transform: translateZ(0);
             -moz-transform: translateZ(0);
