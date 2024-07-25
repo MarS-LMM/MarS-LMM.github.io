@@ -2877,7 +2877,7 @@
             --columns: 24;
             --gutter: 0px;
             --col-width: calc((min(100vw, 1440px) * var(--gutter)) / var(--columns));
-            max-width: min(calc(var(--col-width) * 22), calc(100vw - 2 * var(--gutter)));
+            max-width: min(calc(var(--col-width)), calc(100vw - var(--gutter)));
             margin: 0 auto;
         }       
 
