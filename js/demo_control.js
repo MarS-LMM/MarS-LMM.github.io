@@ -203,8 +203,8 @@ function drawMainChart1(container, chartContainer, ground_truth_kline_url, rollo
 
     const chartIntervalId = setInterval(updateChart, 1000);
 
-    const bidsContainer = container.querySelector('.bids');
-    const asksContainer = container.querySelector('.asks');
+    const bidsContainer = container.querySelector('#bids');
+    const asksContainer = container.querySelector('#asks');
     console.log("Print:", container, bidsContainer, asksContainer);
     // var orderbookIntervalId = setInterval(updateOrderbook, 1000, bidsContainer, asksContainer, 62);
 
@@ -274,6 +274,193 @@ function drawMainChart1(container, chartContainer, ground_truth_kline_url, rollo
         orderbookIntervalId: orderbookIntervalId
     };
 }
+
+function drawMainChart2(container, chartContainer, ground_truth_kline_url, rollout_kline_url, lob_snapshot_url) {
+        const chartOptions = {
+            width: 1000,
+            height: 450,
+            timeScale: {
+                timeVisible: true,
+                secondsVisible: false,
+                tickMarkFormatter: (time, tickMarkType, locale) => {
+                    const date = new Date(time * 1000);
+                    var minutes = date.getUTCMinutes();
+                    var dateString = date.getUTCHours() + ':' + (minutes < 10 ? '0' + minutes : minutes);
+                    if (dateString.indexOf('13:00') >= 0) {
+                        dateString = '11:30|13:00'
+                    }
+                    return dateString;
+                }
+            }
+        };
+        const chart = LightweightCharts.createChart(chartContainer, chartOptions);
+    
+        var candleSeries = chart.addCandlestickSeries({
+            upColor: '#26a69a',
+            downColor: '#ef5350',
+            borderVisible: true,
+            wickUpColor: '#0A6847',
+            wickDownColor: '#A91D3A',
+        });
+        candleSeries.priceScale().applyOptions({
+            scaleMargins: {
+                // positioning the price scale for the area series
+                top: 0.1,
+                bottom: 0.4,
+            },
+        });
+    
+        // Load ground truth kline data.
+        // 把 groundKlineData 作为初始数据，且支持 push.
+        let displayedData;
+        fetch(ground_truth_kline_url)
+            .then(response => response.json())
+            .then(data => {
+                displayedData = data;
+                displayedData = parseKlineData(displayedData);
+                // console.log("groundKlineData:", groundKlineData);
+            })
+            .catch(error => console.error(error));
+        
+        // Load from json file.
+        let klineData;
+        fetch(rollout_kline_url)
+            .then(response => response.json())
+            .then(data => {
+                klineData = data;
+                klineData = parseKlineData(klineData);
+                console.log(klineData);
+            })
+            .catch(error => console.error(error));
+    
+        let currentIndex = 0;
+        const volumeSeries = chart.addHistogramSeries({
+            color: '#26a69a',
+            priceFormat: {
+                type: 'volume',
+            },
+            priceScaleId: 'volume',
+        });
+        volumeSeries.priceScale().applyOptions({
+            scaleMargins: {
+                top: 0.75,
+                bottom: 0,
+            },
+        });
+    
+        let cycle = 6;
+        function updateChart() {
+            if (currentIndex >= klineData.length) {
+                clearInterval(chartIntervalId);
+                return;
+            }
+    
+            console.log("displayedData:", displayedData);
+            if (currentIndex % cycle === 0) {
+                displayedData.push(klineData[currentIndex]);
+            } else {
+                // 直接修改最后一个元素.
+                displayedData[displayedData.length - 1] = klineData[currentIndex];
+            }
+    
+            const candleData = displayedData.map(item => ({
+                time: item.time,
+                open: item.open,
+                high: item.high,
+                low: item.low,
+                close: item.close
+            }));
+    
+            const volumeData = displayedData.map(item => ({
+                time: item.time,
+                value: item.volume,
+                color: item.close > item.open ? '#26a69a' : '#ef5350'
+            }));
+    
+            candleSeries.setData(candleData);
+            volumeSeries.setData(volumeData);
+    
+            chart.timeScale().setVisibleRange({
+                from: candleData[0].time, // 起始时间戳
+                to: candleData[candleData.length - 1].time // 结束时间戳
+            });
+    
+            currentIndex++;
+        }
+    
+        const chartIntervalId = setInterval(updateChart, 1000);
+    
+        const bidsContainer = container.querySelector('#bid');
+        const asksContainer = container.querySelector('#ask');
+        console.log("Print:", container, bidsContainer, asksContainer);
+        // var orderbookIntervalId = setInterval(updateOrderbook, 1000, bidsContainer, asksContainer, 62);
+    
+        
+        // Load from json file.
+        let lob_snapshots;
+        fetch(lob_snapshot_url)
+            .then(response => response.json())
+            .then(data => {
+                lob_snapshots = data;
+                console.log(lob_snapshots);
+            })
+            .catch(error => console.error(error));
+    
+        let lobIndex = 0;
+        function updateOrderbookMain() {
+            if (lobIndex >= lob_snapshots.length) {
+                clearInterval(orderbookIntervalId);
+                return;
+            }
+    
+            const lob_snapshot = lob_snapshots[lobIndex];
+            
+            const ask_price = lob_snapshot.ask_price;
+            const ask_volume = lob_snapshot.ask_volume;
+            const bid_price = lob_snapshot.bid_price;
+            const bid_volume = lob_snapshot.bid_volume;
+    
+            const asks = ask_price.map((price, index) => ({
+                // price 保留两位小数，以 0 补齐
+                price: price.toFixed(2),
+                volume: ask_volume[index]
+            }));
+            for (let i = asks.length; i < 5; i++) {
+                asks.push({
+                    price: '---',
+                    volume: '-----'
+                });
+            }
+            
+    
+            const bids = bid_price.map((price, index) => ({
+                price: price.toFixed(2),
+                volume: bid_volume[index]
+            }));
+            for (let i = bids.length; i < 5; i++) {
+                bids.push({
+                    price: '---',
+                    volume: '-----'
+                });
+            }
+            
+            // Reverse the asks.
+            asks.reverse();
+            console.log(asks, bids);
+            bidsContainer.innerHTML = bids.map(bid => `<tr><td class="bid-level price-col">${bid.price}</td><td class="volume-col">${bid.volume}</td></tr>`).join('');
+            asksContainer.innerHTML = asks.map(ask => `<tr><td class="ask-level price-col">${ask.price}</td><td class="volume-col">${ask.volume}</td></tr>`).join('');
+    
+            lobIndex++;
+        }
+    
+        const orderbookIntervalId = setInterval(updateOrderbookMain, 1000);
+    
+    
+        return {
+            chartIntervalId: chartIntervalId,
+            orderbookIntervalId: orderbookIntervalId
+        };
+    }
 
 function static_chart(container) {
     var width = 800;

@@ -4312,19 +4312,19 @@
                                         <table>
                                             <thead>
                                                 <tr>
-                                                    <th colspan="2" style="text-align: center;">Orderbook</th>
+                                                    <th colspan="4" style="text-align: center;">Orderbook</th>
                                                 </tr>
                                                 <tr>
                                                     <th style="width: 50%; padding: 10px;">Price</th>
                                                     <th style="width: 50%; padding: 10px;">Volume</th>
                                                 </tr>
                                             </thead>
-                                            <tbody class="asks">
+                                            <tbody id="ask">
                                                 <!-- 这里填充 "asks" 的内容 -->
                                             </tbody>
                                             <!-- 如果你有其他表头内容可以在这里添加 -->
                                             <!-- 例如，可以在 tbody 之间添加其他表格行 -->
-                                            <tbody class="bids">
+                                            <tbody id="bid">
                                                 <!-- 这里填充 "bids" 的内容 -->
                                             </tbody>
                                         </table>
@@ -4413,10 +4413,10 @@
                                                             <th>Volume</th>
                                                         </tr>
                                                     </thead>
-                                                    <tbody class="asks">
+                                                    <tbody id="asks">
                                                         <!-- 这里填充 "asks" 的内容 -->
                                                     </tbody>
-                                                    <tbody class="bids">
+                                                    <tbody id="bids">
                                                         <!-- 这里填充 "bids" 的内容 -->
                                                     </tbody>
                                                 </table>
@@ -4688,6 +4688,7 @@
         '1': drawMainChart1,
         '2': drawMainChart1,
         '3': drawMainChart1,
+        '4': drawMainChart2,
     };
 
     function updateMedia() {
