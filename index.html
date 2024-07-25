@@ -4654,193 +4654,193 @@
     <!-- </body> -->
 
     <!-- </html> -->
-</body>
-
-<script src="js/demo_control.js"></script>
-<script>
-    // 第一个图表
-    var chartMainIntervalId = null;
-    var orderbookMainIntervalId = null;
-    const mainContainer = document.getElementById("main-chart");
-    const mainChart = mainContainer.querySelector("#chart-container");
-    const mainSelectInput = document.getElementById("main-select");
-
-    const ground_truth_kline_urls = [
-        "demo_data/demo_kline_groundtruth_rollouts-002180-2023-06-02-09:45:00-16.json",
-        "demo_data/demo_kline_groundtruth_rollouts-002832-2023-06-08-09:45:00-16.json",
-        "demo_data/demo_kline_groundtruth_rollouts-002493-2023-03-24-09:45:00-16.json"
-    ]
-    const rollout_kline_urls = [
-        "demo_data/demo_kline_rollouts-002180-2023-06-02-09:45:00-16.json",
-        "demo_data/demo_kline_rollouts-002832-2023-06-08-09:45:00-16.json",
-        "demo_data/demo_kline_rollouts-002493-2023-03-24-09:45:00-16.json"
-    ]
-    const lobsnapshots_urls = [
-        "demo_data/demo_lobsnapshots_rollouts-002180-2023-06-02-09:45:00-16.json",
-        'demo_data/demo_lobsnapshots_rollouts-002832-2023-06-08-09:45:00-16.json',
-        "demo_data/demo_lobsnapshots_rollouts-002493-2023-03-24-09:45:00-16.json"
-    ]
-    
-
-    // 定义一个对象,存储不同输入组合对应的 GIF 或视频 URL
-    const mainFunctions = {
-        '1': drawMainChart2,
-        '2': drawMainChart1,
-        '3': drawMainChart1,
-    };
-
-    function updateMedia() {
-        const selectedOption = mainSelectInput.value;
-        const key = `${selectedOption}`;
-        console.log("select-key", key, mainFunctions[key])
-
-        // 先清空 GIF 容器
-        // mainContainer.innerHTML = '';
-
-        if (mainFunctions[key]) {
-            if (chartMainIntervalId) {
-                mainChart.innerHTML = '';
-                clearInterval(chartMainIntervalId);
-            }
-            if (orderbookMainIntervalId) {
-                clearInterval(orderbookMainIntervalId);
-            }
-            console.log("Print mainContainer", mainContainer)
-            var tempIntervalIds = mainFunctions[key](mainContainer, mainChart, ground_truth_kline_urls[selectedOption - 1], rollout_kline_urls[selectedOption - 1], lobsnapshots_urls[selectedOption - 1]);
-            chartMainIntervalId = tempIntervalIds.chartIntervalId;
-            orderbookMainIntervalId = tempIntervalIds.orderbookIntervalId;
-        } else {
-            mainContainer.innerHTML = '<!-- 无匹配的 GIF 或视频 -->';
-        }
-    }
-
-    updateMedia()
-    mainSelectInput.addEventListener('change', updateMedia);
-</script>
 
 
-<script>
-    $(document).ready(function () {
-        $('.video-option').change(function () {
-            $('.video-content').hide(); // Hide all video contents
-            $('.video-option').each(function () {
-                if ($(this).is(':checked')) {
-                    $('#content-' + this.id).show(); // Show the selected video
+    <script src="js/demo_control.js"></script>
+    <script>
+        // 第一个图表
+        var chartMainIntervalId = null;
+        var orderbookMainIntervalId = null;
+        const mainContainer = document.getElementById("main-chart");
+        const mainChart = mainContainer.querySelector("#chart-container");
+        const mainSelectInput = document.getElementById("main-select");
+
+        const ground_truth_kline_urls = [
+            "demo_data/demo_kline_groundtruth_rollouts-002180-2023-06-02-09:45:00-16.json",
+            "demo_data/demo_kline_groundtruth_rollouts-002832-2023-06-08-09:45:00-16.json",
+            "demo_data/demo_kline_groundtruth_rollouts-002493-2023-03-24-09:45:00-16.json"
+        ]
+        const rollout_kline_urls = [
+            "demo_data/demo_kline_rollouts-002180-2023-06-02-09:45:00-16.json",
+            "demo_data/demo_kline_rollouts-002832-2023-06-08-09:45:00-16.json",
+            "demo_data/demo_kline_rollouts-002493-2023-03-24-09:45:00-16.json"
+        ]
+        const lobsnapshots_urls = [
+            "demo_data/demo_lobsnapshots_rollouts-002180-2023-06-02-09:45:00-16.json",
+            'demo_data/demo_lobsnapshots_rollouts-002832-2023-06-08-09:45:00-16.json',
+            "demo_data/demo_lobsnapshots_rollouts-002493-2023-03-24-09:45:00-16.json"
+        ]
+        
+
+        // 定义一个对象,存储不同输入组合对应的 GIF 或视频 URL
+        const mainFunctions = {
+            '1': drawMainChart2,
+            '2': drawMainChart1,
+            '3': drawMainChart1,
+        };
+
+        function updateMedia() {
+            const selectedOption = mainSelectInput.value;
+            const key = `${selectedOption}`;
+            console.log("select-key", key, mainFunctions[key])
+
+            // 先清空 GIF 容器
+            // mainContainer.innerHTML = '';
+
+            if (mainFunctions[key]) {
+                if (chartMainIntervalId) {
+                    mainChart.innerHTML = '';
+                    clearInterval(chartMainIntervalId);
                 }
+                if (orderbookMainIntervalId) {
+                    clearInterval(orderbookMainIntervalId);
+                }
+                console.log("Print mainContainer", mainContainer)
+                var tempIntervalIds = mainFunctions[key](mainContainer, mainChart, ground_truth_kline_urls[selectedOption - 1], rollout_kline_urls[selectedOption - 1], lobsnapshots_urls[selectedOption - 1]);
+                chartMainIntervalId = tempIntervalIds.chartIntervalId;
+                orderbookMainIntervalId = tempIntervalIds.orderbookIntervalId;
+            } else {
+                mainContainer.innerHTML = '<!-- 无匹配的 GIF 或视频 -->';
+            }
+        }
+
+        updateMedia()
+        mainSelectInput.addEventListener('change', updateMedia);
+    </script>
+
+
+    <script>
+        $(document).ready(function () {
+            $('.video-option').change(function () {
+                $('.video-content').hide(); // Hide all video contents
+                $('.video-option').each(function () {
+                    if ($(this).is(':checked')) {
+                        $('#content-' + this.id).show(); // Show the selected video
+                    }
+                });
             });
         });
-    });
-</script>
+    </script>
 
-<script>
-    // For DEMO#2 Market Impact.
-    let orderbookIntervalId = null;
-    let chartIntervalId = null;
-    var containerId = "Interactive-Market-Impact-Analysis";
-    const container = document.getElementById(containerId);
-    const gifContainer = container.querySelector('#gif-container');
-    const bidsContainer = container.querySelector('#bids');
-    const asksContainer = container.querySelector('#asks');
-    const agentRadioInputs = container.querySelectorAll('input[name="AgentRadio"]');
-    const volumeRadioInputs = container.querySelectorAll('input[name="VolumeRadio"]');
-    const submitBtn = container.querySelector('#submitBtn');
-    const resetBtn = container.querySelector('#resetBtn');
-    const downloadButtonContainer = container.querySelector('#download-button-container-demo2');
+    <script>
+        // For DEMO#2 Market Impact.
+        let orderbookIntervalId = null;
+        let chartIntervalId = null;
+        var containerId = "Interactive-Market-Impact-Analysis";
+        const container = document.getElementById(containerId);
+        const gifContainer = container.querySelector('#gif-container');
+        const bidsContainer = container.querySelector('#bids');
+        const asksContainer = container.querySelector('#asks');
+        const agentRadioInputs = container.querySelectorAll('input[name="AgentRadio"]');
+        const volumeRadioInputs = container.querySelectorAll('input[name="VolumeRadio"]');
+        const submitBtn = container.querySelector('#submitBtn');
+        const resetBtn = container.querySelector('#resetBtn');
+        const downloadButtonContainer = container.querySelector('#download-button-container-demo2');
 
-    // 定义一个对象,存储不同输入组合对应的 GIF 或视频 URL
-    const mediaUrls = {
-        'agent-option1-volume-option1': drawDemo2V1,
-        'agent-option1-volume-option2': drawChart2,
-        // 'agent-option2-volume-option1': drawChart3,
-        // 'agent-option2-volume-option2': drawChart4,
-        // 添加更多组合...
-    };
+        // 定义一个对象,存储不同输入组合对应的 GIF 或视频 URL
+        const mediaUrls = {
+            'agent-option1-volume-option1': drawDemo2V1,
+            'agent-option1-volume-option2': drawChart2,
+            // 'agent-option2-volume-option1': drawChart3,
+            // 'agent-option2-volume-option2': drawChart4,
+            // 添加更多组合...
+        };
 
-    function updateMedia() {
-        $('#AnalysisId').css("opacity", 0.5)
-        $('#gif-container').css("opacity", 1)
-        $('#orderbook1').css("opacity", 1)
-        $('#tooltip').text('交易开始').show();
+        function updateMedia() {
+            $('#AnalysisId').css("opacity", 0.5)
+            $('#gif-container').css("opacity", 1)
+            $('#orderbook1').css("opacity", 1)
+            $('#tooltip').text('交易开始').show();
 
-        const selectedAgentRadio = Array.from(agentRadioInputs).find(input => input.checked).value;
-        const selectedVolumeRadio = Array.from(volumeRadioInputs).find(input => input.checked).value;
-        const key = `${selectedAgentRadio}-${selectedVolumeRadio}`;
-        console.log(key, mediaUrls[key])
+            const selectedAgentRadio = Array.from(agentRadioInputs).find(input => input.checked).value;
+            const selectedVolumeRadio = Array.from(volumeRadioInputs).find(input => input.checked).value;
+            const key = `${selectedAgentRadio}-${selectedVolumeRadio}`;
+            console.log(key, mediaUrls[key])
 
-        // 先清空 GIF 容器
-        // gifContainer.innerHTML = '';
+            // 先清空 GIF 容器
+            // gifContainer.innerHTML = '';
 
-        if (mediaUrls[key]) {
-            console.log(chartIntervalId)
+            if (mediaUrls[key]) {
+                console.log(chartIntervalId)
+                if (chartIntervalId) {
+                    clearInterval(chartIntervalId);
+                }
+                chartIntervalId = mediaUrls[key](gifContainer, downloadButtonContainer);
+            } else {
+                gifContainer.innerHTML = '<!-- 无匹配的 GIF 或视频 -->';
+            }
+
+            if (orderbookIntervalId) {
+                clearInterval(orderbookIntervalId);
+            }
+            orderbookIntervalId = setInterval(updateOrderbook, 1000, bidsContainer, asksContainer, 50);
+        }
+
+        // 初始化时显示静态图表
+        static_chart_demo2(gifContainer);
+        updateOrderbook(bidsContainer, asksContainer, 50, true);
+
+        submitBtn.addEventListener('click', updateMedia);
+        resetBtn.addEventListener('click', () => {
+            // gifContainer.innerHTML = '';
+            downloadButtonContainer.innerHTML = '';
+            $('#AnalysisId').css("opacity", 1)
+            $('#tooltip').hide();
+            $('#gif-container').css("opacity", 0.5)
+            $('#orderbook1').css("opacity", 0.4)
+
             if (chartIntervalId) {
                 clearInterval(chartIntervalId);
+                chartIntervalId = null;
             }
-            chartIntervalId = mediaUrls[key](gifContainer, downloadButtonContainer);
-        } else {
-            gifContainer.innerHTML = '<!-- 无匹配的 GIF 或视频 -->';
-        }
+            if (orderbookIntervalId) {
+                clearInterval(orderbookIntervalId);
+                orderbookIntervalId = null;
+            }
 
-        if (orderbookIntervalId) {
-            clearInterval(orderbookIntervalId);
-        }
-        orderbookIntervalId = setInterval(updateOrderbook, 1000, bidsContainer, asksContainer, 50);
-    }
+            static_chart_demo2(gifContainer)
+            updateOrderbook(bidsContainer, asksContainer, 50, true);
+        });
+    </script>
 
-    // 初始化时显示静态图表
-    static_chart_demo2(gifContainer);
-    updateOrderbook(bidsContainer, asksContainer, 50, true);
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var dropdown_demo = document.getElementById('nav-demo');
+            var dropdownContent_demo = document.getElementById('nav-dropdown-demo');
 
-    submitBtn.addEventListener('click', updateMedia);
-    resetBtn.addEventListener('click', () => {
-        // gifContainer.innerHTML = '';
-        downloadButtonContainer.innerHTML = '';
-        $('#AnalysisId').css("opacity", 1)
-        $('#tooltip').hide();
-        $('#gif-container').css("opacity", 0.5)
-        $('#orderbook1').css("opacity", 0.4)
+            var dropdown_research = document.getElementById('nav-research');
+            var dropdownContent_research = document.getElementById('nav-dropdown-research');
 
-        if (chartIntervalId) {
-            clearInterval(chartIntervalId);
-            chartIntervalId = null;
-        }
-        if (orderbookIntervalId) {
-            clearInterval(orderbookIntervalId);
-            orderbookIntervalId = null;
-        }
+            dropdown_demo.onclick = function () {
+                // First close the another dropdown.
+                dropdown_research.setAttribute('aria-expanded', 'false');
+                dropdownContent_research.style.display = 'none';
 
-        static_chart_demo2(gifContainer)
-        updateOrderbook(bidsContainer, asksContainer, 50, true);
-    });
-</script>
+                var isOpen = dropdown_demo.getAttribute('aria-expanded') === 'true';
+                dropdown_demo.setAttribute('aria-expanded', !isOpen);
+                dropdownContent_demo.style.display = isOpen ? 'none' : 'block';
+            };
 
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        var dropdown_demo = document.getElementById('nav-demo');
-        var dropdownContent_demo = document.getElementById('nav-dropdown-demo');
+            dropdown_research.onclick = function () {
+                // First close the another dropdown.
+                dropdown_demo.setAttribute('aria-expanded', 'false');
+                dropdownContent_demo.style.display = 'none';
 
-        var dropdown_research = document.getElementById('nav-research');
-        var dropdownContent_research = document.getElementById('nav-dropdown-research');
-
-        dropdown_demo.onclick = function () {
-            // First close the another dropdown.
-            dropdown_research.setAttribute('aria-expanded', 'false');
-            dropdownContent_research.style.display = 'none';
-
-            var isOpen = dropdown_demo.getAttribute('aria-expanded') === 'true';
-            dropdown_demo.setAttribute('aria-expanded', !isOpen);
-            dropdownContent_demo.style.display = isOpen ? 'none' : 'block';
-        };
-
-        dropdown_research.onclick = function () {
-            // First close the another dropdown.
-            dropdown_demo.setAttribute('aria-expanded', 'false');
-            dropdownContent_demo.style.display = 'none';
-
-            var isOpen = dropdown_research.getAttribute('aria-expanded') === 'true';
-            dropdown_research.setAttribute('aria-expanded', !isOpen);
-            dropdownContent_research.style.display = isOpen ? 'none' : 'block';
-        };
-    });
-</script>
-
+                var isOpen = dropdown_research.getAttribute('aria-expanded') === 'true';
+                dropdown_research.setAttribute('aria-expanded', !isOpen);
+                dropdownContent_research.style.display = isOpen ? 'none' : 'block';
+            };
+        });
+    </script>
+</body>
 </html>
