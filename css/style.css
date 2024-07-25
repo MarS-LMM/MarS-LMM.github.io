@@ -88,12 +88,13 @@
 
 
 .bid-level {
-    color: #328156;
+    color: #34875a;
     /* 为买单设置绿色字体 */
 }
 
 .ask-level {
-    color: #bd454c;
+    /* color: #bd454c; */
+    color: #cf4b52;
     /* 为卖单设置红色字体 */
 }
 
