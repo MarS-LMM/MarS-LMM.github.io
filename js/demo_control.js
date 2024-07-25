@@ -203,8 +203,8 @@ function drawMainChart1(container, chartContainer, ground_truth_kline_url, rollo
 
     const chartIntervalId = setInterval(updateChart, 1000);
 
-    const bidsContainer = container.querySelector('#bids');
-    const asksContainer = container.querySelector('#asks');
+    const bidsContainer = container.querySelector('.bids');
+    const asksContainer = container.querySelector('.asks');
     console.log("Print:", container, bidsContainer, asksContainer);
     // var orderbookIntervalId = setInterval(updateOrderbook, 1000, bidsContainer, asksContainer, 62);
 

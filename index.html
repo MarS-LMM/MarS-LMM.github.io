@@ -2867,7 +2867,7 @@
         }
         
         .css-rhpgco {
-            --columns: 24px;
+            --columns: 24;
             --gutter: 0px;
             --col-width: calc((min(100vw, 1440px) - 2 * var(--gutter)) / var(--columns));
             max-width: min(calc(var(--col-width) * 22), calc(100vw - 2 * var(--gutter)));
@@ -4319,12 +4319,12 @@
                                                     <th style="width: 50%; padding: 10px;">Volume</th>
                                                 </tr>
                                             </thead>
-                                            <tbody id="asks">
+                                            <tbody class="asks">
                                                 <!-- 这里填充 "asks" 的内容 -->
                                             </tbody>
                                             <!-- 如果你有其他表头内容可以在这里添加 -->
                                             <!-- 例如，可以在 tbody 之间添加其他表格行 -->
-                                            <tbody id="bids">
+                                            <tbody class="bids">
                                                 <!-- 这里填充 "bids" 的内容 -->
                                             </tbody>
                                         </table>
@@ -4413,10 +4413,10 @@
                                                             <th>Volume</th>
                                                         </tr>
                                                     </thead>
-                                                    <tbody id="ask">
+                                                    <tbody class="asks">
                                                         <!-- 这里填充 "asks" 的内容 -->
                                                     </tbody>
-                                                    <tbody id="bid">
+                                                    <tbody class="bids">
                                                         <!-- 这里填充 "bids" 的内容 -->
                                                     </tbody>
                                                 </table>
