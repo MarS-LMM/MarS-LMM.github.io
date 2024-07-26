@@ -87,21 +87,49 @@
 }
 
 
-.bid-level {
-    color: #34875a;
+#orderbook.bid-level {
+    color: #318055;
     /* 为买单设置绿色字体 */
 }
 
-.ask-level {
+#orderbook.ask-level {
     /* color: #bd454c; */
-    color: #cf4b52;
+    color: #c4474d;
     /* 为卖单设置红色字体 */
 }
 
-.price-col {
+#orderbook.price-col {
     text-align: left;
 }
 
-.volume-col {
+#orderbook.volume-col {
+    text-align: right;
+}
+
+
+
+#orderbook1 {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+
+#orderbook1.bid-level {
+    color: #2c8551;
+    /* 为买单设置绿色字体 */
+}
+
+#orderbook1.ask-level {
+    /* color: #bd454c; */
+    color: #d63f48;
+    /* 为卖单设置红色字体 */
+}
+
+#orderbook1.price-col {
+    text-align: left;
+}
+
+#orderbook1.volume-col {
     text-align: right;
 }
