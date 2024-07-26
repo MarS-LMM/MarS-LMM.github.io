@@ -116,13 +116,14 @@
 
 
 #orderbook1 .bid-level {
-    color: #2c8551;
+    color: #128648;
     /* 为买单设置绿色字体 */
 }
 
 #orderbook1 .ask-level {
     /* color: #bd454c; */
-    color: #d63f48;
+    color: #df343c;
+    background-color: #000000;
     /* 为卖单设置红色字体 */
 }
 
@@ -131,5 +132,7 @@
 }
 
 #orderbook1 .volume-col {
+    color: #757575;
+    background-color: #000000;
     text-align: right;
 }
