@@ -87,22 +87,22 @@
 }
 
 
-#orderbook.bid-level {
+#orderbook .bid-level {
     color: #318055;
     /* 为买单设置绿色字体 */
 }
 
-#orderbook.ask-level {
+#orderbook .ask-level {
     /* color: #bd454c; */
     color: #c4474d;
     /* 为卖单设置红色字体 */
 }
 
-#orderbook.price-col {
+#orderbook .price-col {
     text-align: left;
 }
 
-#orderbook.volume-col {
+#orderbook .volume-col {
     text-align: right;
 }
 
@@ -115,21 +115,21 @@
 }
 
 
-#orderbook1.bid-level {
+#orderbook1 .bid-level {
     color: #2c8551;
     /* 为买单设置绿色字体 */
 }
 
-#orderbook1.ask-level {
+#orderbook1 .ask-level {
     /* color: #bd454c; */
     color: #d63f48;
     /* 为卖单设置红色字体 */
 }
 
-#orderbook1.price-col {
+#orderbook1 .price-col {
     text-align: left;
 }
 
-#orderbook1.volume-col {
+#orderbook1 .volume-col {
     text-align: right;
 }
