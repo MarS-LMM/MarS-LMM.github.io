@@ -57,6 +57,10 @@
     /* 16px */
 }
 
+th[colspan="2"] {
+    color: #787878; /* 保持前景色 */
+    background-color: #333333; /* 例子: 更改为更浅的黑色 */
+}
 
 #orderbook {
     display: flex;
