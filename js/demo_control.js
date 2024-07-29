@@ -260,8 +260,8 @@ function drawMainChart1(container, chartContainer, ground_truth_kline_url, rollo
         // Reverse the asks.
         asks.reverse();
         console.log(asks, bids);
-        bidsContainer.innerHTML = bids.map(bid => `<tr><td class="bid-level price-col" style="color: #009726; background-color: #03160c;">${bid.price}</td><td class="volume-col" style="color: #757575; background-color: #000000;">${bid.volume}</td></tr>`).join('');
-        asksContainer.innerHTML = asks.map(ask => `<tr><td class="ask-level price-col" style="color: #ef122a; background-color: #000000;">${ask.price}</td><td class="volume-col" style="color: #757575; background-color: #000000;">${ask.volume}</td></tr>`).join('');
+        bidsContainer.innerHTML = bids.map(bid => `<tr><td class="bid-level price-col">${bid.price}</td><td class="volume-col">${bid.volume}</td></tr>`).join('');
+        asksContainer.innerHTML = asks.map(ask => `<tr><td class="ask-level price-col">${ask.price}</td><td class="volume-col">${ask.volume}</td></tr>`).join('');
 
         lobIndex++;
     }
