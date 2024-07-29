@@ -114,15 +114,25 @@
     padding: 20px;
 }
 
+#asks {
+    background-color: #000000;
+    color: #e72c32;
+}
+
+#bids {
+    background-color: #03ae3f;
+    color: #02361b;
+}
 
 #orderbook1 .bid-level {
-    color: #128648;
+    color: #01b134;
+    background-color: #07361d;
     /* 为买单设置绿色字体 */
 }
 
 #orderbook1 .ask-level {
     /* color: #bd454c; */
-    color: #df343c;
+    color: #e72c32;
     background-color: #000000;
     /* 为卖单设置红色字体 */
 }
