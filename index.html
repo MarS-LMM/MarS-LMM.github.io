@@ -3857,7 +3857,7 @@
             justify-content: center;
             align-items: center;
             max-width: 1000px;
-            opacity: 0.5;
+            opacity: 0.6;
         }
         #tooltip {
             position: absolute;
@@ -3874,7 +3874,7 @@
             z-index: 99;
         }
         #orderbook1 {
-            opacity: 0.5;
+            opacity: 0.6;
         }
 
         .custom-select {
@@ -4765,7 +4765,7 @@
         };
 
         function updateMedia() {
-            $('#AnalysisId').css("opacity", 0.5)
+            $('#AnalysisId').css("opacity", 0.6)
             $('#gif-container').css("opacity", 1)
             $('#orderbook1').css("opacity", 1)
             $('#tooltip').text('交易开始').show();
@@ -4804,8 +4804,8 @@
             downloadButtonContainer.innerHTML = '';
             $('#AnalysisId').css("opacity", 1)
             $('#tooltip').hide();
-            $('#gif-container').css("opacity", 0.5)
-            $('#orderbook1').css("opacity", 0.5)
+            $('#gif-container').css("opacity", 0.6)
+            $('#orderbook1').css("opacity", 0.6)
 
             if (chartIntervalId) {
                 clearInterval(chartIntervalId);
