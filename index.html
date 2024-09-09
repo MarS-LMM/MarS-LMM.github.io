@@ -3367,6 +3367,11 @@
         }
     </style>
     <style>
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
         .dropdown-content a {
             display: block;
             padding: 8px 16px;
@@ -3409,7 +3414,7 @@
 
         /* 当鼠标悬停在下拉内容的选项上时，改变背景色 */
         .dropdown-content a:hover {
-            background-color: #ddd;
+            background-color: #f1f1f1;
         }
 
         #nav-dropdown {
@@ -3576,7 +3581,7 @@
                                 class="css-7vzs6a" style="width: 100%;" alt="Microsoft logo"></a>
                         <nav aria-label="Primary navigation">
                             <ul class="css-1h6647k">
-                                <li>
+                                <li class="dropdown">
                                     <div class="css-1k2ji4o">
                                         <button type="button" aria-expanded="false"
                                             aria-controls="nav-dropdown-applications" class="dropdown-label css-82b1p9"
@@ -3604,7 +3609,7 @@
                                             class="nav-highlight"
                                             style="font-family:'Segoe Pro Semibold';font-weight:normal">Design</span></a>
                                 </li>
-                                <li>
+                                <li class="dropdown">
                                     <div class="css-1k2ji4o">
                                         <button type="button" aria-expanded="false"
                                             aria-controls="nav-dropdown-experiments" class="dropdown-label css-82b1p9"
@@ -4150,25 +4155,35 @@
             var dropdown_experiments = document.getElementById('nav-experiments');
             var dropdownContent_experiments = document.getElementById('nav-dropdown-experiments');
 
-            dropdown_applications.onclick = function () {
-                // First close the another dropdown.
+            function closeAllDropdowns() {
+                dropdown_applications.setAttribute('aria-expanded', 'false');
+                dropdownContent_applications.style.display = 'none';
                 dropdown_experiments.setAttribute('aria-expanded', 'false');
                 dropdownContent_experiments.style.display = 'none';
+            }
 
+            dropdown_applications.onclick = function (event) {
+                event.stopPropagation();
+                closeAllDropdowns();
                 var isOpen = dropdown_applications.getAttribute('aria-expanded') === 'true';
                 dropdown_applications.setAttribute('aria-expanded', !isOpen);
                 dropdownContent_applications.style.display = isOpen ? 'none' : 'block';
             };
 
-            dropdown_experiments.onclick = function () {
-                // First close the another dropdown.
-                dropdown_applications.setAttribute('aria-expanded', 'false');
-                dropdownContent_applications.style.display = 'none';
-
+            dropdown_experiments.onclick = function (event) {
+                event.stopPropagation();
+                closeAllDropdowns();
                 var isOpen = dropdown_experiments.getAttribute('aria-expanded') === 'true';
                 dropdown_experiments.setAttribute('aria-expanded', !isOpen);
                 dropdownContent_experiments.style.display = isOpen ? 'none' : 'block';
             };
+
+            // 添加点击页面其他地方关闭下拉菜单的功能
+            document.addEventListener('click', function (event) {
+                if (!dropdown_applications.contains(event.target) && !dropdown_experiments.contains(event.target)) {
+                    closeAllDropdowns();
+                }
+            });
         });
     </script>
 
@@ -4244,18 +4259,6 @@
     </script>
 
 
-    <script>
-        $(document).ready(function () {
-            $('.video-option').change(function () {
-                $('.video-content').hide(); // Hide all video contents
-                $('.video-option').each(function () {
-                    if ($(this).is(':checked')) {
-                        $('#content-' + this.id).show(); // Show the selected video
-                    }
-                });
-            });
-        });
-    </script>
 
 </body>
 
