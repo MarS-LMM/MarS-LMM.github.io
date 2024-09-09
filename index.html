@@ -3578,47 +3578,54 @@
                             <ul class="css-1h6647k">
                                 <li>
                                     <div class="css-1k2ji4o">
-                                        <button type="button" aria-expanded="false" aria-controls="nav-dropdown-demo"
-                                            class="dropdown-label css-82b1p9" id="nav-demo">
+                                        <button type="button" aria-expanded="false"
+                                            aria-controls="nav-dropdown-applications" class="dropdown-label css-82b1p9"
+                                            id="nav-applications">
                                             <span class="nav-highlight"
-                                                style="font-family:'Segoe Pro Semibold';font-weight:normal">DEMO</span>
+                                                style="font-family:'Segoe Pro Semibold';font-weight:normal">Applications</span>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="10" height="7" fill="none"
                                                 viewBox="0 0 10 7" style="transform:rotate(0)" class="css-h1szwg">
                                                 <path stroke="currentColor" stroke-width="2" d="m1 1 4 4 4-4">
                                                 </path>
                                             </svg>
                                         </button>
-                                        <div id="nav-dropdown-demo" class="dropdown-content css-0"
+                                        <div id="nav-dropdown-applications" class="dropdown-content css-0"
                                             style="display: none;">
-                                            <a href="#section1">Section 1</a>
-                                            <a href="#section2">Section 2</a>
-                                            <a href="#section3">Section 3</a>
+                                            <a href="#Forecast">Forecast</a>
+                                            <a href="#Detection">Detection</a>
+                                            <a href="#'What IF' Analysis on Market Impact">'What IF' Analysis on Market
+                                                Impact</a>
+                                            <a href="#Reinforcement Learning Environment">Reinforcement Learning
+                                                Environment</a>
                                         </div>
                                     </div>
+                                </li>
+                                <li class="css-0"><a class="css-10cvx0d" href="#High-level Overview"><span
+                                            class="nav-highlight"
+                                            style="font-family:'Segoe Pro Semibold';font-weight:normal">Design</span></a>
                                 </li>
                                 <li>
                                     <div class="css-1k2ji4o">
                                         <button type="button" aria-expanded="false"
-                                            aria-controls="nav-dropdown-research" class="dropdown-label css-82b1p9"
-                                            id="nav-research">
+                                            aria-controls="nav-dropdown-experiments" class="dropdown-label css-82b1p9"
+                                            id="nav-experiments">
                                             <span class="nav-highlight"
-                                                style="font-family:'Segoe Pro Semibold';font-weight:normal">Research</span>
+                                                style="font-family:'Segoe Pro Semibold';font-weight:normal">Experiments</span>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="10" height="7" fill="none"
                                                 viewBox="0 0 10 7" style="transform:rotate(0)" class="css-h1szwg">
                                                 <path stroke="currentColor" stroke-width="2" d="m1 1 4 4 4-4">
                                                 </path>
                                             </svg>
                                         </button>
-                                        <div id="nav-dropdown-research" class="dropdown-content css-0"
+                                        <div id="nav-dropdown-experiments" class="dropdown-content css-0"
                                             style="display: none;">
-                                            <a href="#Introduction">> Section: Introduction</a>
-                                            <a href="#Framework">> Section: Framework</a>
+                                            <a href="#Realistic Simulations">Realistic Simulations</a>
+                                            <a href="#Controllable Simulations">Controllable Simulations</a>
+                                            <a href="#Interactive Market Dynamics">Interactive Market Dynamics</a>
+                                            <a href="#Trade-off between Control and Interaction">Trade-off between
+                                                Control and Interaction</a>
                                         </div>
                                     </div>
-                                </li>
-                                <li class="css-0"><a class="css-10cvx0d" href="#Acknowledgements"><span
-                                            class="nav-highlight"
-                                            style="font-family:'Segoe Pro Semibold';font-weight:normal">Acknowledgements</span></a>
                                 </li>
                             </ul>
                         </nav>
@@ -3650,16 +3657,14 @@
                             </h1>
                         </div>
                         <div style="display: flex; justify-content: center; align-items: center;">
-                            <select class="form-select form-select-lg mb-3 custom-select" style="width: 60%;"
-                                id="main-select" title="choose-project">
-                                <option selected value="1">Give me an example of a stock that
-                                    experienced a price collapse.</option>
-                                <option value="2">Show me a case where significant market
-                                    fluctuation
-                                    affected a company's stock value.</option>
-                                <option value="3">Identify a stock that was dramatically impacted by
-                                    a
-                                    flash crash event.</option>
+                            <select class="form-select form-select-lg mb-3 custom-select"
+                                style="width: 60%; text-align: center;" id="main-select" title="choose-project">
+                                <option selected value="1">Give me a sample of simulated trajectory similar to the one
+                                    for 000090 on 2023-04-04.</option>
+                                <option value="2">Generate an order sequence akin to the one for 000501 on
+                                    2023-04-24.</option>
+                                <option value="3">Provide a simulated trajectory that resembles the one for 002585 on
+                                    2023-03-17.</option>
                             </select>
                         </div>
 
@@ -3758,11 +3763,7 @@
                             historical data replay. </p>
                     </div>
                 </div>
-                <div style="padding-bottom: 1%;"></div>
-            </section>
 
-            <section style="background-color: #fafaf7; color:black;">
-                <div style="padding-top: 1%;"></div>
                 <div class="image-container">
                     <div id="Detection">
                         <h2 aria-label="Forecast"
@@ -3790,12 +3791,6 @@
                             drops during the manipulation period. </p>
                     </div>
                 </div>
-                <div style="padding-bottom: 1%;"></div>
-            </section>
-
-
-            <section style="background-color: #fafaf7; color:black;">
-                <div style="padding-top: 1%;"></div>
                 <div class="image-container">
                     <div id="'What IF' Analysis on Market Impact">
                         <h2 aria-label="'What IF' Analysis on Market Impact"
@@ -3815,17 +3810,20 @@
                     </div>
                     <div style="max-width: 1000px; margin: 0 auto; text-align: justify;">
                         <p class="m-4" style="font-family: NexusSans Bold; font-size: 1.3rem;">
-                            In addition to forecasting future trends, comprehending the current and recent market
-                            conditions constitutes a significant category of financial tasks.
-                            Regulation particularly market
-                            abuse regulation holds a crucial
-                            position in this type of tasks.
-                            The figure above shows spread distribution in different periods of market manipulation.
-                            Left: pre-manipulation
-                            period. Middle: manipulation period. Right: post-manipulation period. Spread during the
-                            manipulation period exhibits a heavier tail and a noticeable peak around spread=1000.
-                            Additionally, compared to the pre- and post-period results, the distribution similarity
-                            drops during the manipulation period. </p>
+                            We generate market impact data by the TWAP strategy with four different configurations:
+                            L1-P0.1, L1-P0.9, L5-P0.1, and L5-P0.9.
+                            The configuration name LX-PY indicates that the aggressive price (AP) is
+                            askX and the maximum passive volume ratio PVR is Y. These
+                            agents are assigned to buy varying volumes over 5 minutes with different instructions and
+                            starting times.
+                            The key finding can be summarized as follows: 1. As shown in figure
+                            above, despite the different configurations, the synthetic
+                            market impact follows a pattern similar to the Square-Root-Law market impact model.
+                            2. Agents with more aggressive configurations (L5-P0.1 and L5-P0.9) are expected to exhibit
+                            a larger market impact and achieve a higher fulfillment rate.
+                            3. The agents generate both short-term and long-term market impacts, consistent with
+                            previous empirical studies.
+                        </p>
                     </div>
                     <h3 aria-label="Discover New Laws of Market Impact"
                         style="font-family: NexusSans Bold; font-size:3rem; text-align: center;">
@@ -3842,25 +3840,29 @@
                     </div>
                     <div style="max-width: 1000px; margin: 0 auto; text-align: justify;">
                         <p class="m-4" style="font-family: NexusSans Bold; font-size: 1.3rem;">
-                            In addition to forecasting future trends, comprehending the current and recent market
-                            conditions constitutes a significant category of financial tasks.
-                            Regulation particularly market
-                            abuse regulation holds a crucial
-                            position in this type of tasks.
-                            The figure above shows spread distribution in different periods of market manipulation.
-                            Left: pre-manipulation
-                            period. Middle: manipulation period. Right: post-manipulation period. Spread during the
-                            manipulation period exhibits a heavier tail and a noticeable peak around spread=1000.
-                            Additionally, compared to the pre- and post-period results, the distribution similarity
-                            drops during the manipulation period. </p>
+                            Market impact mechanisms are complex and difficult to predict accurately due to noise and
+                            randomness in observed data. Using synthetic data from MarS, we aim to establish a
+                            data-driven pipeline to uncover new interpretable laws.
+                            Specifically, we seek new factors beyond the Square-Root-Law that strongly influence market
+                            impact during trading, and we aim to learn a differential equation (DE) to model the
+                            high-order effect of market impact, the decay of market impact sequence over time after
+                            trades. By applying genetic algorithms of symbolic regression, we sought to identify the
+                            most informative factors on synthetic market impact. We discovered three factors that
+                            partially explain the market impact.
+                            We plot the relationship between the market impact and the three factors in the figure above
+                            (1st row).
+                            We leverage generated market impact data to develop a more accurate, data-driven approach.
+                            Our method models the decay of market impact using an ordinary differential equation(ODE),
+                            which integrates both potential influencing factors and decay functions.
+                            The left of the figure on 2nd row illustrates the auto-correlation of the synthetic market
+                            impact decay, and trajectories predicted by the learned ODE, and the base ODE from empirical
+                            formulas. The right showing the learned weights, demonstrating the importance of interaction
+                            pairs.
+
+                        </p>
                     </div>
                 </div>
-                <div style="padding-bottom: 1%;"></div>
 
-            </section>
-
-            <section style="background-color: #fafaf7; color:black;">
-                <div style="padding-top: 1%;"></div>
                 <div class="image-container">
                     <div id="Reinforcement Learning Environment">
                         <h2 aria-label="Reinforcement Learning Environment"
@@ -3875,17 +3877,18 @@
                     </div>
                     <div style="max-width: 1000px; margin: 0 auto; text-align: justify;">
                         <p class="m-4" style="font-family: NexusSans Bold; font-size: 1.3rem;">
-                            In addition to forecasting future trends, comprehending the current and recent market
-                            conditions constitutes a significant category of financial tasks.
-                            Regulation particularly market
-                            abuse regulation holds a crucial
-                            position in this type of tasks.
-                            The figure above shows spread distribution in different periods of market manipulation.
-                            Left: pre-manipulation
-                            period. Middle: manipulation period. Right: post-manipulation period. Spread during the
-                            manipulation period exhibits a heavier tail and a noticeable peak around spread=1000.
-                            Additionally, compared to the pre- and post-period results, the distribution similarity
-                            drops during the manipulation period. </p>
+                            The MarS environment, being both realistic and interactive, is ideal for training
+                            reinforcement learning (RL) agents. This environment accurately reflects an agent's impact,
+                            provides realistic rewards, and facilitates training robust agents for the financial market.
+                            In this experiment, we aim to train a trading agent from scratch using MarS. The trading
+                            agent's goal is to purchase a large volume within 5 minutes, optimizing both fulfillment
+                            rate and price advantage.
+                            The above figure shows the training performance of the trading agent. The agent's
+                            performance improves from -6 BP to 2~6 BP during training. The observed
+                            fluctuations between 2~6 BP are attributed to the agent exploring various
+                            strategies between high and low fulfillment rates, resulting in corresponding variations in
+                            price advantage based on the current reward setting.
+                        </p>
                     </div>
                 </div>
                 <div style="padding-bottom: 1%;"></div>
@@ -3981,89 +3984,82 @@
                             </p>
                         </div>
                     </div>
-                    <div style="padding-bottom: 1%;"></div>
-            </section>
 
-            <section style="background-color: #fafaf7; color:black;">
-                <div style="padding-top: 1%;"></div>
-                <div id="Controllable Simulations">
-                    <h2 aria-label="Controllable Simulations"
-                        style="font-family: NexusSans Bold; font-size:4rem; text-align: center;">
-                        Controllable Simulations</h2>
-                    <div style="padding-bottom: 1%;"></div>
-                </div>
-                <div class="image-container">
-                    <div style="text-align: center;">
-                        <img src="figures/ensemble-vs-order-combined.png" class="img-fluid" alt="Framework"
-                            style="max-width: 40%; height: auto;">
+                    <div id="Controllable Simulations">
+                        <h2 aria-label="Controllable Simulations"
+                            style="font-family: NexusSans Bold; font-size:4rem; text-align: center;">
+                            Controllable Simulations</h2>
+                        <div style="padding-bottom: 1%;"></div>
                     </div>
-                    <div style="max-width: 1000px; margin: 0 auto; text-align: justify;">
-                        <p class="m-4" style="font-family: NexusSans Bold; font-size: 1.3rem;">
-                            We demonstrate MarS's controllability by generating scenarios that mirror replays. An order
-                            batch is generated based on minute-level guiding signals from the replay curve, integrated
-                            with the order model within an ensemble model to generate trading orders.
-                            The figure upper-left shows that the ensemble model closely follows the replay curve,
-                            whereas the order model shows less correlation.
-                            We further compare the correlation between simulated and replay prices with different
-                            simulated trajectory numbers on the upper-right figure.
-                        </p>
+                    <div class="image-container">
+                        <div style="text-align: center;">
+                            <img src="figures/ensemble-vs-order-combined.png" class="img-fluid" alt="Framework"
+                                style="max-width: 40%; height: auto;">
+                        </div>
+                        <div style="max-width: 1000px; margin: 0 auto; text-align: justify;">
+                            <p class="m-4" style="font-family: NexusSans Bold; font-size: 1.3rem;">
+                                We demonstrate MarS's controllability by generating scenarios that mirror replays. An
+                                order
+                                batch is generated based on minute-level guiding signals from the replay curve,
+                                integrated
+                                with the order model within an ensemble model to generate trading orders.
+                                The figure upper-left shows that the ensemble model closely follows the replay curve,
+                                whereas the order model shows less correlation.
+                                We further compare the correlation between simulated and replay prices with different
+                                simulated trajectory numbers on the upper-right figure.
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div style="padding-bottom: 1%;"></div>
-            </section>
+                    <div id="Interactive Market Dynamics">
+                        <h2 aria-label="Interactive Market Dynamics"
+                            style="font-family: NexusSans Bold; font-size:4rem; text-align: center;">
+                            Interactive Market Dynamics</h2>
+                        <div style="padding-bottom: 1%;"></div>
+                    </div>
+                    <div class="image-container">
+                        <div style="text-align: center;">
+                            <img src="figures/interaction.png" class="img-fluid" alt="Framework"
+                                style="max-width: 30%; height: auto;">
+                        </div>
+                        <div style="max-width: 1000px; margin: 0 auto; text-align: justify;">
+                            <p class="m-4" style="font-family: NexusSans Bold; font-size: 1.3rem;">
+                                Understanding market impacts is crucial for a wide range of applications. MarS allows
+                                for
+                                the simulation of market impacts by generating orders based on detailed order-level
+                                data.
+                                The figure above shows the market impact of a TWAP agent
+                                executing a large trade volume.
+                                These results illustrate that MarS can effectively model the impact of trading
+                                strategies on
+                                market prices, providing valuable insights for market participants and aiding in the
+                                development of more robust trading strategies.
+                            </p>
+                        </div>
+                    </div>
 
-            <section style="background-color: #fafaf7; color:black;">
-                <div style="padding-top: 1%;"></div>
-                <div id="Interactive Market Dynamics">
-                    <h2 aria-label="Interactive Market Dynamics"
-                        style="font-family: NexusSans Bold; font-size:4rem; text-align: center;">
-                        Interactive Market Dynamics</h2>
+                    <div id="Trade-off between Control and Interaction">
+                        <h2 aria-label="Trade-off between Control and Interaction"
+                            style="font-family: NexusSans Bold; font-size:4rem; text-align: center;">
+                            Trade-off between Control and Interaction</h2>
+                        <div style="padding-bottom: 1%;"></div>
+                    </div>
+                    <div class="image-container">
+                        <div style="text-align: center;">
+                            <img src="figures/control-interaction.png" class="img-fluid" alt="Framework"
+                                style="max-width: 30%; height: auto;">
+                        </div>
+                        <div style="max-width: 1000px; margin: 0 auto; text-align: justify;">
+                            <p class="m-4" style="font-family: NexusSans Bold; font-size: 1.3rem;">
+                                We evaluate the ability of MarS to balance control and interaction using replay data
+                                exhibiting a 0.3 to 0.5 price change over 5 minutes.
+                                Our control target is to generate a similar price change scenario. When control is
+                                enabled,
+                                the ensemble model is guided by the replay curve.
+                                The figure above illustrates the trade-off between control and interaction.
+                            </p>
+                        </div>
+                    </div>
                     <div style="padding-bottom: 1%;"></div>
-                </div>
-                <div class="image-container">
-                    <div style="text-align: center;">
-                        <img src="figures/interaction.png" class="img-fluid" alt="Framework"
-                            style="max-width: 30%; height: auto;">
-                    </div>
-                    <div style="max-width: 1000px; margin: 0 auto; text-align: justify;">
-                        <p class="m-4" style="font-family: NexusSans Bold; font-size: 1.3rem;">
-                            Understanding market impacts is crucial for a wide range of applications. MarS allows for
-                            the simulation of market impacts by generating orders based on detailed order-level data.
-                            The figure above shows the market impact of a TWAP agent
-                            executing a large trade volume.
-                            These results illustrate that MarS can effectively model the impact of trading strategies on
-                            market prices, providing valuable insights for market participants and aiding in the
-                            development of more robust trading strategies.
-                        </p>
-                    </div>
-                </div>
-                <div style="padding-bottom: 1%;"></div>
-            </section>
-
-            <section style="background-color: #fafaf7; color:black;">
-                <div style="padding-top: 1%;"></div>
-                <div id="Trade-off between Control and Interaction">
-                    <h2 aria-label="Trade-off between Control and Interaction"
-                        style="font-family: NexusSans Bold; font-size:4rem; text-align: center;">
-                        Trade-off between Control and Interaction</h2>
-                    <div style="padding-bottom: 1%;"></div>
-                </div>
-                <div class="image-container">
-                    <div style="text-align: center;">
-                        <img src="figures/control-interaction.png" class="img-fluid" alt="Framework"
-                            style="max-width: 30%; height: auto;">
-                    </div>
-                    <div style="max-width: 1000px; margin: 0 auto; text-align: justify;">
-                        <p class="m-4" style="font-family: NexusSans Bold; font-size: 1.3rem;">
-                            We evaluate the ability of MarS to balance control and interaction using replay data
-                            exhibiting a 0.3 to 0.5 price change over 5 minutes.
-                            Our control target is to generate a similar price change scenario. When control is enabled,
-                            the ensemble model is guided by the replay curve.
-                            The figure above illustrates the trade-off between control and interaction.
-                        </p>
-                    </div>
-                </div>
-                <div style="padding-bottom: 1%;"></div>
             </section>
 
     </div>
@@ -4146,122 +4142,122 @@
     <!-- </footer> -->
     </div>
     <!-- </body> -->
-</body>
-<!-- </html> -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var dropdown_applications = document.getElementById('nav-applications');
+            var dropdownContent_applications = document.getElementById('nav-dropdown-applications');
+
+            var dropdown_experiments = document.getElementById('nav-experiments');
+            var dropdownContent_experiments = document.getElementById('nav-dropdown-experiments');
+
+            dropdown_applications.onclick = function () {
+                // First close the another dropdown.
+                dropdown_experiments.setAttribute('aria-expanded', 'false');
+                dropdownContent_experiments.style.display = 'none';
+
+                var isOpen = dropdown_applications.getAttribute('aria-expanded') === 'true';
+                dropdown_applications.setAttribute('aria-expanded', !isOpen);
+                dropdownContent_applications.style.display = isOpen ? 'none' : 'block';
+            };
+
+            dropdown_experiments.onclick = function () {
+                // First close the another dropdown.
+                dropdown_applications.setAttribute('aria-expanded', 'false');
+                dropdownContent_applications.style.display = 'none';
+
+                var isOpen = dropdown_experiments.getAttribute('aria-expanded') === 'true';
+                dropdown_experiments.setAttribute('aria-expanded', !isOpen);
+                dropdownContent_experiments.style.display = isOpen ? 'none' : 'block';
+            };
+        });
+    </script>
+
+    <!-- </html> -->
 
 
-<script src="js/demo_control.js"></script>
-<script>
-    // 第一个图表
-    var chartMainIntervalId = null;
-    var orderbookMainIntervalId = null;
-    const mainContainer = document.getElementById("main-chart");
-    const mainChart = mainContainer.querySelector("#chart-container");
-    const mainSelectInput = document.getElementById("main-select");
+    <script src="js/demo_control.js"></script>
+    <script>
+        // 第一个图表
+        var chartMainIntervalId = null;
+        var orderbookMainIntervalId = null;
+        const mainContainer = document.getElementById("main-chart");
+        const mainChart = mainContainer.querySelector("#chart-container");
+        const mainSelectInput = document.getElementById("main-select");
 
-    const ground_truth_kline_urls = [
-        "demo_data/demo_kline_groundtruth_rollouts-000090-2023-04-04-09_55_00-4.json",
-        "demo_data/demo_kline_groundtruth_rollouts-000501-2023-04-24-09_50_00-4.json",
-        "demo_data/demo_kline_groundtruth_rollouts-002585-2023-03-17-09_50_00-4.json",
-        "demo_data/demo_kline_groundtruth_rollouts-002690-2023-06-29-10_00_00-4.json",
-        "demo_data/demo_kline_groundtruth_rollouts-002755-2023-06-05-10_05_00-4.json",
-    ]
-    const rollout_kline_urls = [
-        "demo_data/demo_kline_rollouts-000090-2023-04-04-09_55_00-4.json",
-        "demo_data/demo_kline_rollouts-000501-2023-04-24-09_50_00-4.json",
-        "demo_data/demo_kline_rollouts-002585-2023-03-17-09_50_00-4.json",
-        "demo_data/demo_kline_rollouts-002690-2023-06-29-10_00_00-4.json",
-        "demo_data/demo_kline_rollouts-002755-2023-06-05-10_05_00-4.json"
-    ]
-    const lobsnapshots_urls = [
-        "demo_data/demo_lobsnapshots_rollouts-000090-2023-04-04-09_55_00-4.json",
-        "demo_data/demo_lobsnapshots_rollouts-000501-2023-04-24-09_50_00-4.json",
-        "demo_data/demo_lobsnapshots_rollouts-002585-2023-03-17-09_50_00-4.json",
-        "demo_data/demo_lobsnapshots_rollouts-002690-2023-06-29-10_00_00-4.json",
-        "demo_data/demo_lobsnapshots_rollouts-002755-2023-06-05-10_05_00-4.json"
-    ]
-
-
-    // 定义一个对象,存储不同输入组合对应的 GIF 或视频 URL
-    const mainFunctions = {
-        '1': drawMainChart1,
-        '2': drawMainChart1,
-        '3': drawMainChart1,
-    };
-
-    function updateMedia() {
-        const selectedOption = mainSelectInput.value;
-        const key = `${selectedOption}`;
-        console.log("select-key", key, mainFunctions[key])
-
-        // 先清空 GIF 容器
-        // mainContainer.innerHTML = '';
-
-        if (mainFunctions[key]) {
-            if (chartMainIntervalId) {
-                mainChart.innerHTML = '';
-                clearInterval(chartMainIntervalId);
-            }
-            if (orderbookMainIntervalId) {
-                clearInterval(orderbookMainIntervalId);
-            }
-            console.log("Print mainContainer", mainContainer)
-            var tempIntervalIds = mainFunctions[key](mainContainer, mainChart, ground_truth_kline_urls[selectedOption - 1], rollout_kline_urls[selectedOption - 1], lobsnapshots_urls[selectedOption - 1]);
-            chartMainIntervalId = tempIntervalIds.chartIntervalId;
-            orderbookMainIntervalId = tempIntervalIds.orderbookIntervalId;
-        } else {
-            mainContainer.innerHTML = '<!-- 无匹配的 GIF 或视频 -->';
-        }
-    }
-
-    updateMedia()
-    mainSelectInput.addEventListener('change', updateMedia);
-</script>
+        const ground_truth_kline_urls = [
+            "demo_data/demo_kline_groundtruth_rollouts-000090-2023-04-04-09_55_00-4.json",
+            "demo_data/demo_kline_groundtruth_rollouts-000501-2023-04-24-09_50_00-4.json",
+            "demo_data/demo_kline_groundtruth_rollouts-002585-2023-03-17-09_50_00-4.json",
+            "demo_data/demo_kline_groundtruth_rollouts-002690-2023-06-29-10_00_00-4.json",
+            "demo_data/demo_kline_groundtruth_rollouts-002755-2023-06-05-10_05_00-4.json",
+        ]
+        const rollout_kline_urls = [
+            "demo_data/demo_kline_rollouts-000090-2023-04-04-09_55_00-4.json",
+            "demo_data/demo_kline_rollouts-000501-2023-04-24-09_50_00-4.json",
+            "demo_data/demo_kline_rollouts-002585-2023-03-17-09_50_00-4.json",
+            "demo_data/demo_kline_rollouts-002690-2023-06-29-10_00_00-4.json",
+            "demo_data/demo_kline_rollouts-002755-2023-06-05-10_05_00-4.json"
+        ]
+        const lobsnapshots_urls = [
+            "demo_data/demo_lobsnapshots_rollouts-000090-2023-04-04-09_55_00-4.json",
+            "demo_data/demo_lobsnapshots_rollouts-000501-2023-04-24-09_50_00-4.json",
+            "demo_data/demo_lobsnapshots_rollouts-002585-2023-03-17-09_50_00-4.json",
+            "demo_data/demo_lobsnapshots_rollouts-002690-2023-06-29-10_00_00-4.json",
+            "demo_data/demo_lobsnapshots_rollouts-002755-2023-06-05-10_05_00-4.json"
+        ]
 
 
-<script>
-    $(document).ready(function () {
-        $('.video-option').change(function () {
-            $('.video-content').hide(); // Hide all video contents
-            $('.video-option').each(function () {
-                if ($(this).is(':checked')) {
-                    $('#content-' + this.id).show(); // Show the selected video
+        // 定义一个对象,存储不同输入组合对应的 GIF 或视频 URL
+        const mainFunctions = {
+            '1': drawMainChart1,
+            '2': drawMainChart1,
+            '3': drawMainChart1,
+        };
+
+        function updateMedia() {
+            const selectedOption = mainSelectInput.value;
+            const key = `${selectedOption}`;
+            console.log("select-key", key, mainFunctions[key])
+
+            // 先清空 GIF 容器
+            // mainContainer.innerHTML = '';
+
+            if (mainFunctions[key]) {
+                if (chartMainIntervalId) {
+                    mainChart.innerHTML = '';
+                    clearInterval(chartMainIntervalId);
                 }
+                if (orderbookMainIntervalId) {
+                    clearInterval(orderbookMainIntervalId);
+                }
+                console.log("Print mainContainer", mainContainer)
+                var tempIntervalIds = mainFunctions[key](mainContainer, mainChart, ground_truth_kline_urls[selectedOption - 1], rollout_kline_urls[selectedOption - 1], lobsnapshots_urls[selectedOption - 1]);
+                chartMainIntervalId = tempIntervalIds.chartIntervalId;
+                orderbookMainIntervalId = tempIntervalIds.orderbookIntervalId;
+            } else {
+                mainContainer.innerHTML = '<!-- 无匹配的 GIF 或视频 -->';
+            }
+        }
+
+        updateMedia()
+        mainSelectInput.addEventListener('change', updateMedia);
+    </script>
+
+
+    <script>
+        $(document).ready(function () {
+            $('.video-option').change(function () {
+                $('.video-content').hide(); // Hide all video contents
+                $('.video-option').each(function () {
+                    if ($(this).is(':checked')) {
+                        $('#content-' + this.id).show(); // Show the selected video
+                    }
+                });
             });
         });
-    });
-</script>
+    </script>
 
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        var dropdown_demo = document.getElementById('nav-demo');
-        var dropdownContent_demo = document.getElementById('nav-dropdown-demo');
-
-        var dropdown_research = document.getElementById('nav-research');
-        var dropdownContent_research = document.getElementById('nav-dropdown-research');
-
-        dropdown_demo.onclick = function () {
-            // First close the another dropdown.
-            dropdown_research.setAttribute('aria-expanded', 'false');
-            dropdownContent_research.style.display = 'none';
-
-            var isOpen = dropdown_demo.getAttribute('aria-expanded') === 'true';
-            dropdown_demo.setAttribute('aria-expanded', !isOpen);
-            dropdownContent_demo.style.display = isOpen ? 'none' : 'block';
-        };
-
-        dropdown_research.onclick = function () {
-            // First close the another dropdown.
-            dropdown_demo.setAttribute('aria-expanded', 'false');
-            dropdownContent_demo.style.display = 'none';
-
-            var isOpen = dropdown_research.getAttribute('aria-expanded') === 'true';
-            dropdown_research.setAttribute('aria-expanded', !isOpen);
-            dropdownContent_research.style.display = isOpen ? 'none' : 'block';
-        };
-    });
-</script>
+</body>
 
 
 </html>
