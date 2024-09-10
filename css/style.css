@@ -57,6 +57,12 @@
     /* 16px */
 }
 
+th[colspan="2"] {
+    color: #787878;
+    /* 保持前景色 */
+    background-color: #333333;
+    /* 例子: 更改为更浅的黑色 */
+}
 
 #orderbook {
     display: flex;
@@ -87,20 +93,39 @@
 }
 
 
-.bid-level {
-    color: #4fc787;
+#orderbook .bid-level {
+    color: #318055;
     /* 为买单设置绿色字体 */
 }
 
-.ask-level {
-    color: #ea5760;
+#orderbook .ask-level {
+    /* color: #bd454c; */
+    color: #e72c32;
     /* 为卖单设置红色字体 */
 }
 
-.price-col {
+#orderbook .price-col {
     text-align: left;
 }
 
-.volume-col {
+#orderbook .volume-col {
     text-align: right;
+}
+
+
+
+#orderbook1 {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+#asks {
+    background-color: #fafaf7;
+    color: #c4474d;
+}
+
+#bids {
+    background-color: #fafaf7;
+    color: #02361b;
 }
