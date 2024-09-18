@@ -126,11 +126,13 @@ function drawMainChart1(container, chartContainer, ground_truth_kline_url, rollo
     // Load ground truth kline data.
     // 把 groundKlineData 作为初始数据，且支持 push.
     let displayedData;
+    let baseData;
     fetch(ground_truth_kline_url)
         .then(response => response.json())
         .then(data => {
             console.log("Ground truth data loaded:", data); // Debugging line
-            displayedData = parseKlineData(data);
+            baseData = parseKlineData(data);
+            displayedData = Object.assign([], baseData);
             console.log("Parsed ground truth data:", displayedData); // Debugging line
             // Initialize chart with data if available
             if (displayedData.length > 0) {
@@ -173,13 +175,14 @@ function drawMainChart1(container, chartContainer, ground_truth_kline_url, rollo
     });
 
     let cycle = 6;
+
     function updateChart() {
         if (currentIndex >= klineData.length) {
-            clearInterval(chartIntervalId);
+            // clearInterval(chartIntervalId);
+            currentIndex = 0;
+            displayedData = Object.assign([], baseData);
             return;
         }
-
-        console.log("displayedData:", displayedData);
         if (currentIndex % cycle === 0) {
             displayedData.push(klineData[currentIndex]);
         } else {
@@ -217,7 +220,6 @@ function drawMainChart1(container, chartContainer, ground_truth_kline_url, rollo
 
     const bidsContainer = container.querySelector('#bids');
     const asksContainer = container.querySelector('#asks');
-    console.log("Print:", container, bidsContainer, asksContainer);
     // var orderbookIntervalId = setInterval(updateOrderbook, 1000, bidsContainer, asksContainer, 62);
 
 
@@ -232,9 +234,11 @@ function drawMainChart1(container, chartContainer, ground_truth_kline_url, rollo
         .catch(error => console.error(error));
 
     let lobIndex = 0;
+
     function updateOrderbookMain() {
         if (lobIndex >= lob_snapshots.length) {
-            clearInterval(orderbookIntervalId);
+            // clearInterval(orderbookIntervalId);
+            lobIndex = 0;
             return;
         }
 
@@ -271,7 +275,6 @@ function drawMainChart1(container, chartContainer, ground_truth_kline_url, rollo
 
         // Reverse the asks.
         asks.reverse();
-        console.log(asks, bids);
         bidsContainer.innerHTML = bids.map(bid => `<tr><td class="bid-level price-col">${bid.price}</td><td class="volume-col">${bid.volume}</td></tr>`).join('');
         asksContainer.innerHTML = asks.map(ask => `<tr><td class="ask-level price-col">${ask.price}</td><td class="volume-col">${ask.volume}</td></tr>`).join('');
 
