@@ -9,6 +9,24 @@
     <!-- <link rel="stylesheet" href="./_next/static/css/a01bb245298af342.css" crossorigin="" data-precedence="next" /> -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            },
+            svg: {
+                fontCache: 'global'
+            },
+            chtml: {
+                scale: 1,
+                matchFontHeight: true,
+                fontFamily: "'Segoe Pro', 'NexusSans Bold', sans-serif",
+                adaptiveCSS: true
+            }
+        };
+    </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
@@ -3566,6 +3584,35 @@
             margin-bottom: 10px;
             /* 线与标题之间的间距 */
         }
+
+        .MathJax {
+            font-size: 100% !important;
+            color: inherit;
+        }
+
+        mjx-container {
+            font-family: 'Segoe Pro', 'NexusSans Bold', sans-serif !important;
+        }
+
+        mjx-math {
+            font-size: inherit !important;
+        }
+
+        .m-4 {
+            margin: 1rem;
+        }
+
+        ul.m-4 {
+            margin-top: 0.5rem;
+            /* 减小上边距 */
+            padding-left: 2rem;
+            /* 确保列表项不会太靠左 */
+        }
+
+        ul.m-4 li {
+            margin-bottom: 0.5rem;
+            /* 在列表项之间添加一些间距 */
+        }
     </style>
 </head>
 
@@ -3815,19 +3862,37 @@
                     </div>
                     <div style="max-width: 1000px; margin: 0 auto; text-align: justify;">
                         <p class="m-4" style="font-family: NexusSans Bold; font-size: 1.3rem;">
-                            We generate market impact data by the TWAP strategy with four different configurations:
-                            L1-P0.1, L1-P0.9, L5-P0.1, and L5-P0.9.
-                            The configuration name LX-PY indicates that the aggressive price (AP) is
-                            askX and the maximum passive volume ratio PVR is Y. These
-                            agents are assigned to buy varying volumes over 5 minutes with different instructions and
-                            starting times.
-                            The key finding can be summarized as follows: 1. As shown in figure
-                            above, despite the different configurations, the synthetic
-                            market impact follows a pattern similar to the Square-Root-Law market impact model.
-                            2. Agents with more aggressive configurations (L5-P0.1 and L5-P0.9) are expected to exhibit
-                            a larger market impact and achieve a higher fulfillment rate.
-                            3. The agents generate both short-term and long-term market impacts, consistent with
-                            previous empirical studies.
+                            We explore the potential market impact using a "What IF" analysis by simulating the
+                            effects of different trading strategies under various configurations. Specifically, we use
+                            the TWAP strategy with four distinct configurations: L1-P0.1, L1-P0.9, L5-P0.1, and L5-P0.9.
+                            The Time-Weighted Average Price (TWAP) algorithm executes large trade volumes while
+                            minimizing market impact over a specified time frame. The TWAP strategy divides the total
+                            volume to be traded into equal parts that are executed at regular intervals.
+                            In these configurations, "LX" refers to the aggressiveness of the price level (askX), while
+                            "PY" represents the passive volume ratio (PVR).
+                            During the passive period, the strategy places orders at the current bid price (bid1)
+                            with a volume determined by the PVR-Y, aiming to fill orders without significantly altering
+                            the market price.
+                            If passive trading does not achieve the expected volume, the strategy
+                            enters an aggressive phase, placing additional orders at a aggressive price (AP) X to
+                            ensure the desired volume is executed. These agents are
+                            tasked with buying varying volumes over a 5-minute window, with differing starting times and
+                            instructions.
+                            Our "What IF" analysis yields the following insights:
+                        <ul class="m-4" style="font-family: NexusSans Bold; font-size: 1.3rem;">
+                            <li>Despite the different configurations, the synthetic market impact follows a pattern
+                                similar to the Square-Root-Law model, showing consistency with known market impact
+                                behavior.</li>
+
+                            <li>More aggressive strategies, such as L5-P0.1 and L5-P0.9, result in a larger market
+                                impact
+                                and a higher fulfillment rate.</li>
+
+                            <li>Both short-term and long-term market impacts are observed, aligning with empirical
+                                studies
+                                of real-world market data.</li>
+                        </ul>
+
                         </p>
                     </div>
                     <h3 aria-label="Discover New Laws of Market Impact"
@@ -3845,27 +3910,48 @@
                     </div>
                     <div style="max-width: 1000px; margin: 0 auto; text-align: justify;">
                         <p class="m-4" style="font-family: NexusSans Bold; font-size: 1.3rem;">
-                            Market impact mechanisms are complex and difficult to predict accurately due to noise and
-                            randomness in observed data. Using synthetic data from MarS, we aim to establish a
-                            data-driven pipeline to uncover new interpretable laws.
-                            Specifically, we seek new factors beyond the Square-Root-Law that strongly influence market
-                            impact during trading, and we aim to learn a differential equation (DE) to model the
-                            high-order effect of market impact, the decay of market impact sequence over time after
-                            trades. By applying genetic algorithms of symbolic regression, we sought to identify the
-                            most informative factors on synthetic market impact. We discovered three factors that
-                            partially explain the market impact.
-                            We plot the relationship between the market impact and the three factors in the figure above
-                            (1st row).
-                            We leverage generated market impact data to develop a more accurate, data-driven approach.
+                            Market impact is notoriously difficult to predict due to noise and randomness in observed
+                            data. Using MarS’s synthetic data, we perform a "What IF" analysis to explore new,
+                            interpretable laws beyond the traditional <a
+                                href="https://www.ram-ai.com/sites/default/files/2022-06/costestim.pdf">Square-Root-Law</a>.
+                            By constructing a data-driven pipeline and applying genetic algorithms with symbolic
+                            regression, we identify three significant factors {<em>resiliency</em>,
+                            <em>LOB_pressure</em>, <em>LOB_depth</em>} that strongly influence market impact during
+                            trading. These factors provide a deeper understanding of how market conditions can shape
+                            price movements and
+                            execution behavior over time, offering a more nuanced view of trading dynamics.
+                            In addition to uncovering these factors, we develop an Ordinary Differential Equation
+                            (ODE) model (as shown in <a href="#ode-equation">Equation below</a>) to capture the decay of
+                            market
+                            impact after
+                            trades are executed. This ODE integrates the newly identified factors and decay functions,
+                            offering a more accurate representation of how market impact diminishes or persists over
+                            time. A comparison of our learned ODE with empirical formulas shows that our approach better
+                            captures the complexity of market impact, particularly when traditional models fail to
+                            account for higher-order effects.
+                            Through this "What IF" exploration, MarS reveals previously hidden factors and provides a
+                            robust foundation for modeling market impact in a more predictive and actionable way.
+                        </p>
+                        <p class="m-4" style="font-family: NexusSans Bold; font-size: 1.3rem;">
                             Our method models the decay of market impact using an ordinary differential equation(ODE),
-                            which integrates both potential influencing factors and decay functions.
-                            The left of the figure on 2nd row illustrates the auto-correlation of the synthetic market
-                            impact decay, and trajectories predicted by the learned ODE, and the base ODE from empirical
-                            formulas. The right showing the learned weights, demonstrating the importance of interaction
-                            pairs.
-
+                            which integrates both potential influencing factors and decay functions:
+                        </p>
+                        <div id="ode-equation" class="m-4" style="font-family: NexusSans Bold; font-size: 1.3rem;">
+                            $$\frac{dY(t)}{dt} = \text{sum}( W \circ (X \otimes F^{\text{decay}}(t))) =
+                            \sum_{i=1}^{m}\sum_{j=1}^{n} W_{i,j} X_i F_j^{\text{decay}}(t),$$
+                        </div>
+                        <p class="m-4" style="font-family: NexusSans Bold; font-size: 1.3rem;">
+                            where $Y(t)$ is the after-trading market impact, $(X \in \mathbb{R}^m)$ represents key
+                            influencing factors, such as volume, price, etc., and $F_{\text{decay}}(t): t \rightarrow
+                            \mathbb{R}^n $ includes possible decay functions, e.g., $F^{\text{decay}}(t) = [1/t, \ldots,
+                            1/sqrt(t) ]$. Both $X$ and $F^{\text{decay}}(t)$ can be customized based on domain
+                            knowledge. $\otimes$ is the outer product, $\circ$ is the Hadamard product, $X^{T} \otimes
+                            F_{\text{decay}}(t)$ is a matrix with size $\mathbb{R}^{n \times m}$, representing
+                            interactions among factors and decay patterns, and \(W \in \mathbb{R}^{n\times m}\) is the
+                            learnable weights of interactions.
                         </p>
                     </div>
+
                 </div>
 
                 <div class="image-container">
@@ -3888,7 +3974,7 @@
                             In this experiment, we aim to train a trading agent from scratch using MarS. The trading
                             agent's goal is to purchase a large volume within 5 minutes, optimizing both fulfillment
                             rate and price advantage.
-                            The above figure shows the training performance of the trading agent. The agent's
+                            The above figure shows the test performance of the trading agent. The agent's
                             performance improves from -6 BP to 2~6 BP during training. The observed
                             fluctuations between 2~6 BP are attributed to the agent exploring various
                             strategies between high and low fulfillment rates, resulting in corresponding variations in
@@ -3937,6 +4023,18 @@
                         <span style="font-size:4rem;">Experiments</span>
                     </h1>
                     <div style="padding-bottom: 1%;"></div>
+                    <div style="max-width: 1000px; margin: 0 auto; text-align: justify;">
+                        <p class="m-4" style="font-family: NexusSans Bold; font-size: 1.3rem;">
+                            We thoroughly evaluate MarS’s capabilities across five key areas: scalability, realism,
+                            controllability, interactivity, and the balance between control and interaction. These
+                            experiments are designed to test MarS’s performance in generating realistic market
+                            simulations, its adaptability to predefined conditions, and its ability to model dynamic
+                            market interactions. Each experiment highlights a critical aspect of MarS’s design,
+                            demonstrating its potential for use in practical financial applications.
+
+                        </p>
+                    </div>
+
                 </div>
                 <div class="image-container">
                     <div id="Scaling Law in Large Market Model">
@@ -3986,6 +4084,10 @@
                                 distribution, the lower left panel shows the 5-minute log return distribution, the upper
                                 right panel depicts log return auto-correlation, and the lower right panel illustrates
                                 volatility auto-correlation.
+                                The results demonstrate a high level of consistency between MarS’s simulated data and
+                                real-world market behaviors. These findings confirm that MarS can generate simulations
+                                that closely mirror real market conditions, making it a reliable tool for practical
+                                applications.
                             </p>
                         </div>
                     </div>
@@ -4012,6 +4114,9 @@
                                 whereas the order model shows less correlation.
                                 We further compare the correlation between simulated and replay prices with different
                                 simulated trajectory numbers on the upper-right figure.
+                                MarS’s ensemble model shows a higher correlation with replayed data than the baseline
+                                model, even with fewer simulated trajectories. This demonstrates MarS’s effectiveness in
+                                creating controllable market simulations with minimal computational overhead.
                             </p>
                         </div>
                     </div>
@@ -4061,6 +4166,10 @@
                                 enabled,
                                 the ensemble model is guided by the replay curve.
                                 The figure above illustrates the trade-off between control and interaction.
+                                Our findings indicate that configurations focused solely on control achieve the
+                                highest correlation with historical data, while introducing interactive agents reduces
+                                control precision but enhances realism. This trade-off allows MarS to adapt to diverse
+                                simulation needs, making it a versatile platform for both research and practical use.
                             </p>
                         </div>
                     </div>
