@@ -3381,7 +3381,8 @@
     </style>
     <style data-emotion="css 14r34si">
         .css-14r34si {
-            background-color: #FFFFFF;
+            background-color: #fafaf7;
+            color: black;
         }
     </style>
     <style>
@@ -3431,6 +3432,7 @@
         }
 
         /* 当鼠标悬停在下拉内容的选项上时，改变背景色 */
+
         .dropdown-content a:hover {
             background-color: #f1f1f1;
         }
@@ -3581,8 +3583,25 @@
             /* 线的高度 */
             background-color: #000;
             /* 线的颜色 */
-            margin-bottom: 10px;
+            margin-bottom: 1.5rem;
+            margin-top: 3rem;
             /* 线与标题之间的间距 */
+        }
+
+        .img-fluid {
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        .img-fluid-80 {
+            width: 80%;
+            margin: 10px 0;
+        }
+
+        .section {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding-top: 1%;
         }
 
         .MathJax {
@@ -3618,14 +3637,15 @@
 
 <body>
 
-    <div id="app" class="css-14r34si"><a href="#main" class="css-1xx7x66">Skip to main content</a>
+    <div id="app" class="css-14r34si">
         <div class="css-1v3heaz">
             <!-- 导航栏 -->
             <header class="css-17baor0">
                 <div class="css-c9log">
                     <!-- 微软的 LOGO -->
-                    <div class="css-1pedjod"><a class="css-i8j8ci" href="/"><img src="images/microsoft.png"
-                                class="css-7vzs6a" style="width: 100%;" alt="Microsoft logo"></a>
+                    <div class="css-1pedjod">
+                        <a class="css-i8j8ci" href="/"><img src="images/microsoft.png" class="css-7vzs6a"
+                                style="width: 100%;" alt="Microsoft logo"></a>
                         <nav aria-label="Primary navigation">
                             <ul class="css-1h6647k">
                                 <li class="dropdown">
@@ -3751,36 +3771,34 @@
                         </div>
                     </div>
                     <div style="max-width: 1000px; margin: 0 auto; text-align: justify;">
-                        <p class="m-4" style="font-family: NexusSans Bold; font-size: 1.3rem;"> We propose Large
-                            Market Model (LMM), an order-level generative foundation model, for financial market
-                            simulation, akin to language modeling in the digital world. Our financial Market Simulation
-                            engine (MarS), powered by LMM, addresses the need for realistic, interactive and
-                            controllable order generation. Key objectives of this paper include evaluating LMM's scaling
-                            law in financial markets, assessing MarS’s realism, balancing controlled generation with
-                            market impact, and demonstrating MarS's potential applications. We showcase MarS as a
-                            forecast tool, detection system, analysis platform, and agent training environment. Our
-                            contributions include pioneering a generative model for financial markets, designing MarS to
-                            meet domain-specific needs, and demonstrating MarS-based applications' industry potential.
+                        <p class="m-4" style="font-family: NexusSans Bold; font-size: 1.3rem;"> We propose Large Market
+                            Model (LMM), an order-level generative foundation model, for financial market simulation,
+                            akin to language modeling in the digital world. Our financial Market Simulation engine
+                            (MarS), powered by LMM, addresses
+                            the need for realistic, interactive and controllable order generation. Key objectives of
+                            this paper include evaluating LMM's scaling law in financial markets, assessing MarS’s
+                            realism, balancing controlled generation with market
+                            impact, and demonstrating MarS's potential applications. We showcase MarS as a forecast
+                            tool, detection system, analysis platform, and agent training environment. Our contributions
+                            include pioneering a generative model for
+                            financial markets, designing MarS to meet domain-specific needs, and demonstrating
+                            MarS-based applications' industry potential.
                         </p>
-                        <div style="padding-bottom: 1%;"></div>
                     </div>
             </section>
 
             <!-- <div style="background:rgba(250, 253, 93, 1)"> -->
             <!-- Forecast -->
 
-            <section style="background-color: #fafaf7; color:black;">
-                <div style="padding-top: 1%;"></div>
-                <div class="line"></div>
-                <div style="padding-bottom: 1%;"></div>
+            <div class="line"></div>
+            <section class="section">
                 <div id="Applications">
                     <h1 class="css-s855ri" style="font-family:'Segoe Pro'; text-align: center;">
                         <span style="font-size:4rem;">MarS Applications</span>
                     </h1>
                     <div style="padding-bottom: 1%;"></div>
                     <div style="text-align: center;">
-                        <img src="figures/Applications.png" class="img-fluid" alt="Framework"
-                            style="max-width: 65%; height: auto;">
+                        <img src="figures/Applications.png" class="img-fluid" alt="Framework">
                     </div>
                 </div>
                 <div style="padding-bottom: 1%;"></div>
@@ -3794,25 +3812,17 @@
                     <!-- <div class="row"> -->
                     <div style="text-align: center;">
                         <img src="figures/2024-05-13-order-model-trend-prediction.png" class="img-fluid"
-                            alt="Order Model Trend Prediction" style="max-width: 50%; height: auto;">
+                            alt="Order Model Trend Prediction" style="width: 50%;">
                     </div>
-                    <div style="max-width: 1000px; margin: 0 auto; text-align: justify;">
+                    <div style=" text-align: justify;">
                         <p class="m-4" style="font-family: NexusSans Bold; font-size: 1.3rem;">
-                            Forecasting is crucial in many financial applications, with market
-                            trend
-                            forecasting being a prime example. This task demands models that
-                            accurately
-                            capture and reflect market dynamics. Traditionally, direct
-                            forecasting
-                            models are used.
-                            The figure above is Trend Prediction Accuracy. We benchmark the
-                            predictive performance of our
-                            market simulation against DeepLOB. For each initial time point, the
-                            large market model executes 128 simulations, aggregating the
-                            outcomes to
-                            determine the final predicted class. The ground truth is obtained
-                            from
-                            historical data replay. </p>
+                            Forecasting is crucial in many financial applications, with market trend forecasting being a
+                            prime example. This task demands models that accurately capture and reflect market dynamics.
+                            Traditionally, direct forecasting models are used. The figure above
+                            is Trend Prediction Accuracy. We benchmark the predictive performance of our market
+                            simulation against DeepLOB. For each initial time point, the large market model executes 128
+                            simulations, aggregating the outcomes to determine
+                            the final predicted class. The ground truth is obtained from historical data replay. </p>
                     </div>
                 </div>
 
@@ -3825,22 +3835,19 @@
                     </div>
                     <!-- <div class="row"> -->
                     <div style="text-align: center;">
-                        <img src="figures/spread_periods.png" class="img-fluid" alt="Spread"
-                            style="max-width: 50%; height: auto;">
+                        <img src="figures/spread_periods.png" class="img-fluid" alt="Spread">
                     </div>
                     <div style="max-width: 1000px; margin: 0 auto; text-align: justify;">
                         <p class="m-4" style="font-family: NexusSans Bold; font-size: 1.3rem;">
                             In addition to forecasting future trends, comprehending the current and recent market
-                            conditions constitutes a significant category of financial tasks.
-                            Regulation particularly market
-                            abuse regulation holds a crucial
-                            position in this type of tasks.
-                            The figure above shows spread distribution in different periods of market manipulation.
-                            Left: pre-manipulation
-                            period. Middle: manipulation period. Right: post-manipulation period. Spread during the
-                            manipulation period exhibits a heavier tail and a noticeable peak around spread=1000.
-                            Additionally, compared to the pre- and post-period results, the distribution similarity
-                            drops during the manipulation period. </p>
+                            conditions constitutes a significant category of financial tasks. Regulation particularly
+                            market abuse regulation holds a crucial position in this type of tasks. The
+                            figure above shows spread distribution in different periods of market manipulation. Left:
+                            pre-manipulation period. Middle: manipulation period. Right: post-manipulation period.
+                            Spread during the manipulation period exhibits
+                            a heavier tail and a noticeable peak around spread=1000. Additionally, compared to the pre-
+                            and post-period results, the distribution similarity drops during the manipulation period.
+                        </p>
                     </div>
                 </div>
                 <div class="image-container">
@@ -3858,7 +3865,7 @@
                     <!-- <div class="row"> -->
                     <div style="text-align: center;">
                         <img src="figures/replay_market_trans_volume-QV5-0.001-0.02-paper-report.png" class="img-fluid"
-                            alt="Order Model Trend Prediction" style="max-width: 50%; height: auto;">
+                            alt="Order Model Trend Prediction">
                     </div>
                     <div style="max-width: 1000px; margin: 0 auto; text-align: justify;">
                         <p class="m-4" style="font-family: NexusSans Bold; font-size: 1.3rem;">
@@ -3901,12 +3908,11 @@
                     <div style="padding-bottom: 1%;"></div>
                     <!-- <div class="row"> -->
                     <div style="text-align: center;">
-                        <img src="figures/volatility-regression-True-factor.png" class="img-fluid" alt="volatility"
-                            style="max-width: 50%; height: auto;">
+                        <img src="figures/volatility-regression-True-factor.png" class="img-fluid" alt="volatility">
                     </div>
                     <div style="text-align: center;">
                         <img src="figures/learned_ode.png" class="img-fluid" alt="learning_market_impact"
-                            style="max-width: 30%; height: auto;">
+                            style="width: 70%;">
                     </div>
                     <div style="max-width: 1000px; margin: 0 auto; text-align: justify;">
                         <p class="m-4" style="font-family: NexusSans Bold; font-size: 1.3rem;">
@@ -3964,7 +3970,7 @@
                     <!-- <div class="row"> -->
                     <div style="text-align: center;">
                         <img src="figures/RL-training-curves-more-actions.png" class="img-fluid" alt="Spread"
-                            style="max-width: 30%; height: auto;">
+                            style="width: 50%;">
                     </div>
                     <div style="max-width: 1000px; margin: 0 auto; text-align: justify;">
                         <p class="m-4" style="font-family: NexusSans Bold; font-size: 1.3rem;">
@@ -3982,42 +3988,41 @@
                         </p>
                     </div>
                 </div>
-                <div style="padding-bottom: 1%;"></div>
             </section>
 
-            <section style="background-color: #fafaf7; color:black;">
-                <div style="padding-top: 1%;"></div>
-                <div class="line"></div>
-                <div style="padding-bottom: 1%;"></div>
+            <div class="line"></div>
+            <section class="section">
                 <div id="High-level Overview">
                     <h1 class="css-s855ri" style="font-family:'Segoe Pro'; text-align: center;">
                         <span style="font-size:4rem;">High-level Overview </span>
                     </h1>
+                    <div style="padding-bottom: 1%;"></div>
                 </div>
                 <div class="image-container">
                     <div style="text-align: center;">
-                        <img src="figures/High-level Overview png.png" class="img-fluid" alt="Framework"
-                            style="max-width: 50%; height: auto;">
+                        <img src="figures/High-level Overview png.png" class="img-fluid" alt="Framework">
                     </div>
-                    <div style="max-width: 1000px; margin: 0 auto; text-align: justify;">
+                    <div style=" text-align: justify;">
                         <p class="m-4" style="font-family: NexusSans Bold; font-size: 1.3rem;">
                             MarS is powered by a generative foundation model (LMM) trained on order-level historical
-                            financial market data. During real-time simulation, LMM dynamically generates order series
-                            in response to various conditions, including user-submitted interactive orders, vague target
-                            scenario descriptions, and current/recent market data. These generated order series,
-                            combined with user interactive orders, are matched in a simulated clearing house in
-                            real-time, producing fine-grained simulated market trajectories. The flexibility of LMM’s
-                            order generation enables MarS to support various downstream applications, such as
-                            forecasting, detection/warning systems, analysis platforms, and agent training environments.
+                            financial market data. During real-time simulation, LMM dynamically generates order
+                            series
+                            in response to various conditions, including user-submitted interactive
+                            orders, vague target scenario descriptions, and current/recent market data. These
+                            generated
+                            order series, combined with user interactive orders, are matched in a simulated clearing
+                            house in real-time, producing fine-grained
+                            simulated market trajectories. The flexibility of LMM’s order generation enables MarS to
+                            support various downstream applications, such as forecasting, detection/warning systems,
+                            analysis platforms, and agent training environments.
                         </p>
                     </div>
                 </div>
+
             </section>
 
-            <section style="background-color: #fafaf7; color:black;">
-                <div style="padding-top: 1%;"></div>
-                <div class="line"></div>
-                <div style="padding-bottom: 1%;"></div>
+            <div class="line"></div>
+            <section class="section">
                 <div id="Experiments">
                     <h1 class="css-s855ri" style="font-family:'Segoe Pro'; text-align: center;">
                         <span style="font-size:4rem;">Experiments</span>
@@ -4045,16 +4050,16 @@
                     </div>
                     <!-- <div class="row"> -->
                     <div style="text-align: center;">
-                        <img src="figures/2024-05-model-scaling-curve.png" class="img-fluid"
-                            alt="Order Model Trend Prediction" style="max-width: 40%; height: auto;">
+                        <img src="figures/2024-05-model-scaling-curve.png" class="img-fluid-80"
+                            alt="Order Model Trend Prediction">
                     </div>
-                    <div style="max-width: 1000px; margin: 0 auto; text-align: justify;">
+                    <div style=" text-align: justify;">
                         <p class="m-4" style="font-family: NexusSans Bold; font-size: 1.3rem;">
                             To assess the scalability of the Large Market Model (LMM), we evaluated its performance
                             across varying data scales and model sizes. Our findings indicate that as the size of the
-                            data and the model increases, the performance of the LMM significantly improves, consistent
-                            with the scaling laws observed in other foundation models. This suggests that the potential
-                            of LMM can be further unlocked by leveraging larger datasets and more extensive
+                            data and the model increases, the performance of the LMM significantly improves,
+                            consistent with the scaling laws observed in other foundation models. This suggests that the
+                            potential of LMM can be further unlocked by leveraging larger datasets and more extensive
                             computational resources.
 
                         </p>
@@ -4068,22 +4073,19 @@
                         </div>
                         <!-- <div class="row"> -->
                         <div style="text-align: center;">
-                            <img src="figures/stylized-facts.png" class="img-fluid" alt="Order Model Trend Prediction"
-                                style="max-width: 40%; height: auto;">
+                            <img src="figures/stylized-facts.png" class="img-fluid-80"
+                                alt="Order Model Trend Prediction">
                         </div>
-                        <div style="max-width: 1000px; margin: 0 auto; text-align: justify;">
+                        <div style=" text-align: justify;">
                             <p class="m-4" style="font-family: NexusSans Bold; font-size: 1.3rem;">
                                 To assess the realism of MarS’s market simulations, we compare simulated data against
-                                key
-                                stylized facts derived from historical market data.
-                                These stylized facts serve as robust benchmarks, ensuring that our simulations
-                                accurately
-                                reflect real-world market behaviors. <br>
-                                The figure above is illustration of stylized facts: The upper left panel displays the
-                                1-minute log return
-                                distribution, the lower left panel shows the 5-minute log return distribution, the upper
-                                right panel depicts log return auto-correlation, and the lower right panel illustrates
-                                volatility auto-correlation.
+                                key stylized facts derived from historical market data. These stylized facts serve as
+                                robust benchmarks, ensuring that our simulations accurately reflect real-world
+                                market behaviors. <br> The figure above is illustration of stylized facts: The upper
+                                left panel displays the 1-minute log return distribution, the lower left panel shows the
+                                5-minute log
+                                return distribution, the upper right panel depicts log return auto-correlation, and the
+                                lower right panel illustrates volatility auto-correlation.
                                 The results demonstrate a high level of consistency between MarS’s simulated data and
                                 real-world market behaviors. These findings confirm that MarS can generate simulations
                                 that closely mirror real market conditions, making it a reliable tool for practical
@@ -4100,85 +4102,90 @@
                     </div>
                     <div class="image-container">
                         <div style="text-align: center;">
-                            <img src="figures/ensemble-vs-order-combined.png" class="img-fluid" alt="Framework"
-                                style="max-width: 40%; height: auto;">
+                            <img src="figures/ensemble-vs-order-combined.png" class="img-fluid-80" alt="ensemble"
+                                style="width: 80%;">
+                            <div style=" text-align: justify;">
+                                <p class="m-4" style="font-family: NexusSans Bold; font-size: 1.3rem;">
+                                    We demonstrate MarS's controllability by generating scenarios that mirror replays.
+                                    An
+                                    order batch is generated based on minute-level guiding signals from the replay
+                                    curve,
+                                    integrated with the order model within an ensemble model to generate trading orders.
+                                    The figure upper-left shows that the ensemble model closely follows the replay
+                                    curve,
+                                    whereas the order model shows less correlation. We further compare the correlation
+                                    between simulated and replay prices with different
+                                    simulated trajectory numbers on the upper-right figure.
+                                    MarS’s ensemble model shows a higher correlation with replayed data than the
+                                    baseline
+                                    model, even with fewer simulated trajectories. This demonstrates MarS’s
+                                    effectiveness in
+                                    creating controllable market simulations with minimal computational overhead.
+                                </p>
+                            </div>
                         </div>
-                        <div style="max-width: 1000px; margin: 0 auto; text-align: justify;">
-                            <p class="m-4" style="font-family: NexusSans Bold; font-size: 1.3rem;">
-                                We demonstrate MarS's controllability by generating scenarios that mirror replays. An
-                                order
-                                batch is generated based on minute-level guiding signals from the replay curve,
-                                integrated
-                                with the order model within an ensemble model to generate trading orders.
-                                The figure upper-left shows that the ensemble model closely follows the replay curve,
-                                whereas the order model shows less correlation.
-                                We further compare the correlation between simulated and replay prices with different
-                                simulated trajectory numbers on the upper-right figure.
-                                MarS’s ensemble model shows a higher correlation with replayed data than the baseline
-                                model, even with fewer simulated trajectories. This demonstrates MarS’s effectiveness in
-                                creating controllable market simulations with minimal computational overhead.
-                            </p>
+                        <div id="Interactive Market Dynamics">
+                            <h2 aria-label="Interactive Market Dynamics"
+                                style="font-family: NexusSans Bold; font-size:4rem; text-align: center;">
+                                Interactive Market Dynamics</h2>
+                            <div style="padding-bottom: 1%;"></div>
                         </div>
-                    </div>
-                    <div id="Interactive Market Dynamics">
-                        <h2 aria-label="Interactive Market Dynamics"
-                            style="font-family: NexusSans Bold; font-size:4rem; text-align: center;">
-                            Interactive Market Dynamics</h2>
-                        <div style="padding-bottom: 1%;"></div>
-                    </div>
-                    <div class="image-container">
-                        <div style="text-align: center;">
-                            <img src="figures/interaction.png" class="img-fluid" alt="Framework"
-                                style="max-width: 30%; height: auto;">
+                        <div class="image-container">
+                            <div style="text-align: center;">
+                                <img src="figures/interaction.png" class="img-fluid-80" alt="Interaction"
+                                    style="width: 60%">
+                            </div>
+                            <div style=" text-align: justify;">
+                                <p class="m-4" style="font-family: NexusSans Bold; font-size: 1.3rem;">
+                                    Understanding market impacts is crucial for a wide range of applications. MarS
+                                    allows
+                                    for the simulation of market impacts by generating orders based on detailed
+                                    order-level
+                                    data. The figure above shows the market impact of a TWAP agent executing a large
+                                    trade volume. These results illustrate that MarS can effectively model the impact of
+                                    trading strategies on market prices, providing valuable insights for market
+                                    participants
+                                    and aiding in the development of more robust
+                                    trading strategies.
+                                </p>
+                            </div>
                         </div>
-                        <div style="max-width: 1000px; margin: 0 auto; text-align: justify;">
-                            <p class="m-4" style="font-family: NexusSans Bold; font-size: 1.3rem;">
-                                Understanding market impacts is crucial for a wide range of applications. MarS allows
-                                for
-                                the simulation of market impacts by generating orders based on detailed order-level
-                                data.
-                                The figure above shows the market impact of a TWAP agent
-                                executing a large trade volume.
-                                These results illustrate that MarS can effectively model the impact of trading
-                                strategies on
-                                market prices, providing valuable insights for market participants and aiding in the
-                                development of more robust trading strategies.
-                            </p>
-                        </div>
-                    </div>
 
-                    <div id="Trade-off between Control and Interaction">
-                        <h2 aria-label="Trade-off between Control and Interaction"
-                            style="font-family: NexusSans Bold; font-size:4rem; text-align: center;">
-                            Trade-off between Control and Interaction</h2>
-                        <div style="padding-bottom: 1%;"></div>
-                    </div>
-                    <div class="image-container">
-                        <div style="text-align: center;">
-                            <img src="figures/control-interaction.png" class="img-fluid" alt="Framework"
-                                style="max-width: 30%; height: auto;">
+                        <div id="Trade-off between Control and Interaction">
+                            <h2 aria-label="Trade-off between Control and Interaction"
+                                style="font-family: NexusSans Bold; font-size:4rem; text-align: center;">
+                                Trade-off between Control and Interaction</h2>
+                            <div style="padding-bottom: 1%;"></div>
                         </div>
-                        <div style="max-width: 1000px; margin: 0 auto; text-align: justify;">
-                            <p class="m-4" style="font-family: NexusSans Bold; font-size: 1.3rem;">
-                                We evaluate the ability of MarS to balance control and interaction using replay data
-                                exhibiting a 0.3 to 0.5 price change over 5 minutes.
-                                Our control target is to generate a similar price change scenario. When control is
-                                enabled,
-                                the ensemble model is guided by the replay curve.
-                                The figure above illustrates the trade-off between control and interaction.
-                                Our findings indicate that configurations focused solely on control achieve the
-                                highest correlation with historical data, while introducing interactive agents reduces
-                                control precision but enhances realism. This trade-off allows MarS to adapt to diverse
-                                simulation needs, making it a versatile platform for both research and practical use.
-                            </p>
+                        <div class="image-container">
+                            <div style="text-align: center;">
+                                <img src="figures/control-interaction.png" class="img-fluid-80"
+                                    alt="control-interaction" style="width: 60%">
+                            </div>
+                            <div style=" text-align: justify;">
+                                <p class="m-4" style="font-family: NexusSans Bold; font-size: 1.3rem;">
+                                    We evaluate the ability of MarS to balance control and interaction using replay
+                                    data
+                                    exhibiting a 0.3 to 0.5 price change over 5 minutes.
+                                    Our control target is to generate a similar price change scenario. When control
+                                    is
+                                    enabled,
+                                    the ensemble model is guided by the replay curve.
+                                    The figure above illustrates the trade-off between control and interaction.
+                                    Our findings indicate that configurations focused solely on control achieve the
+                                    highest correlation with historical data, while introducing interactive agents
+                                    reduces
+                                    control precision but enhances realism. This trade-off allows MarS to adapt to
+                                    diverse
+                                    simulation needs, making it a versatile platform for both research and practical
+                                    use.
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                    <div style="padding-bottom: 1%;"></div>
             </section>
 
     </div>
     </main>
-    <!-- <footer class="css-a2jhnh"> -->
     <footer>
         <div class="footer">
             <p>
@@ -4213,7 +4220,6 @@
             justify-content: space-between;
             align-items: center;
             flex-direction: row;
-
         }
 
         .footer p {
@@ -4244,7 +4250,6 @@
             width: 140px;
             background: url(./figures/microsoft-logo.png) no-repeat;
             background-size: contain;
-
         }
 
         .footer p:nth-child(2) span a {
