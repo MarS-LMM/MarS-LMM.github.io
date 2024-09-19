@@ -3632,6 +3632,10 @@
             margin-bottom: 0.5rem;
             /* 在列表项之间添加一些间距 */
         }
+
+        .custom-link {
+            color: #006ee5;
+        }
     </style>
 </head>
 
@@ -3728,10 +3732,10 @@
                                 </span>
                             </h1>
                             <a href=" https://arxiv.org/abs/2409.07486" target="_blank" class="css-b8n9y9"
-                                style="font-weight: bold; font-size: 1.3rem; margin-right: 20px; color: #0078d4;">
+                                style="font-weight: bold; font-size: 1.3rem; margin-right: 20px; color: #006ee5;">
                                 [Paper]</a>
                             <a href="https://github.com/microsoft/MarS" target="_blank" class="css-b8n9y9"
-                                style="font-weight: bold; font-size: 1.3rem; margin-right: 20px; color: #0078d4;">[Code]</a>
+                                style="font-weight: bold; font-size: 1.3rem; margin-right: 20px; color: #006ee5;">[Code]</a>
                         </div>
                         <div style="display: flex; justify-content: center; align-items: center;">
                             <select class="form-select form-select-lg mb-3 custom-select"
@@ -3925,7 +3929,8 @@
                             Market impact is notoriously difficult to predict due to noise and randomness in observed
                             data. Using MarS’s synthetic data, we perform a "What IF" analysis to explore new,
                             interpretable laws beyond the traditional <a
-                                href="https://www.ram-ai.com/sites/default/files/2022-06/costestim.pdf">Square-Root-Law</a>.
+                                href="https://www.ram-ai.com/sites/default/files/2022-06/costestim.pdf"
+                                class="custom-link">Square-Root-Law</a>.
                             By constructing a data-driven pipeline and applying genetic algorithms with symbolic
                             regression, we identify three significant factors {<em>resiliency</em>,
                             <em>LOB_pressure</em>, <em>LOB_depth</em>} that strongly influence market impact during
@@ -3933,7 +3938,8 @@
                             price movements and
                             execution behavior over time, offering a more nuanced view of trading dynamics.
                             In addition to uncovering these factors, we develop an Ordinary Differential Equation
-                            (ODE) model (as shown in <a href="#ode-equation">Equation below</a>) to capture the decay of
+                            (ODE) model (as shown in <a href="#ode-equation" class="custom-link">Equation below</a>) to
+                            capture the decay of
                             market
                             impact after
                             trades are executed. This ODE integrates the newly identified factors and decay functions,
@@ -4208,7 +4214,7 @@
                 <span style="margin-left:1em;">© Microsoft 2024</span>
             </p>
             <p>
-                <span> <a target="_blank" href="https://www.microsoft.com/"></a></span>
+                <span> <a target="_blank" href="https://www.microsoft.com/" style="color: #000;">1</a></span>
             </p>
         </div>
     </footer>
