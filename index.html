@@ -47,18 +47,17 @@
     <meta property="og:image:height" content="630">
     <meta property="og:type" content="website">
     <meta name="twitter:title" content="Microsoft: MarS">
-    <meta name="twitter:image" content="https://MarS-GenAI.github.io/images/microsoft.png">
+    <meta name="twitter:image" content="https://MarS-GenAI.github.io/figures/microsoft.png">
     <meta name="twitter:image:width" content="1200">
     <meta name="twitter:image:height" content="630">
     <link rel="shortcut icon" href="images/microsoft.png" type="image/png">
-    <link rel="icon" href="images/microsoft.png" sizes="192x192">
-    <link rel="icon" href="images/microsoft.png" sizes="128x128">
-    <link rel="icon" href="images/microsoft.png" type="image/png">
-    <link rel="icon" href="images/microsoft.png" sizes="any" type="image/svg+xml">
+    <link rel="icon" href="figures/microsoft.png" sizes="192x192">
+    <link rel="icon" href="figures/microsoft.png" sizes="128x128">
+    <link rel="icon" href="figures/microsoft.png" type="image/png">
+    <link rel="icon" href="figures/microsoft.png" sizes="any" type="image/svg+xml">
     <meta name="next-size-adjust" content="width=device-width, initial-scale=1.0">
     <script src="js/echarts.min.js"></script>
     <script src="js/lightweight-charts.standalone.production.js"></script>
-    <!-- <link rel="stylesheet" href="css/claude.css" /> -->
     <link rel="stylesheet" href="css/font-style.css">
     <link rel="stylesheet" href="css/style.css">
     <script>
@@ -3648,7 +3647,7 @@
                 <div class="css-c9log">
                     <!-- 微软的 LOGO -->
                     <div class="css-1pedjod">
-                        <a class="css-i8j8ci" href="/"><img src="images/microsoft.png" class="css-7vzs6a"
+                        <a class="css-i8j8ci" href="/"><img src="figures/microsoft.png" class="css-7vzs6a"
                                 style="width: 100%;" alt="Microsoft logo"></a>
                         <nav aria-label="Primary navigation">
                             <ul class="css-1h6647k">
@@ -3781,18 +3780,15 @@
                         </div>
                     </div>
                     <div style="max-width: 1000px; margin: 0 auto; text-align: justify;">
-                        <p class="m-4" style="font-family: NexusSans Bold; font-size: 1.3rem;"> We propose Large Market
-                            Model (LMM), an order-level generative foundation model, for financial market simulation,
-                            akin to language modeling in the digital world. Our financial Market Simulation engine
-                            (MarS), powered by LMM, addresses
-                            the need for realistic, interactive and controllable order generation. Key objectives of
-                            this paper include evaluating LMM's scaling law in financial markets, assessing MarS’s
-                            realism, balancing controlled generation with market
-                            impact, and demonstrating MarS's potential applications. We showcase MarS as a forecast
-                            tool, detection system, analysis platform, and agent training environment. Our contributions
-                            include pioneering a generative model for
-                            financial markets, designing MarS to meet domain-specific needs, and demonstrating
-                            MarS-based applications' industry potential.
+                        <p class="m-4" style="font-family: NexusSans Bold; font-size: 1.3rem;">
+                            We propose Large Market Model (LMM), an order-level generative foundation model,
+                            for financial market simulation, akin to language modeling in the digital world. Our
+                            financial Market Simulation engine (MarS), powered by LMM, addresses the domain-specific
+                            need for realistic, interactive and controllable order generation. Key observations include
+                            LMM's strong scalability across data size and model complexity, and MarS's robust and
+                            practicable realism in controlled generation with market impact. We showcase MarS as a
+                            forecast tool, detection system, analysis platform, and agent training environment, thus
+                            demonstrating MarS's ``paradigm shift'' potential for a variety of financial applications.
                         </p>
                     </div>
             </section>
@@ -3821,18 +3817,24 @@
                     </div>
                     <!-- <div class="row"> -->
                     <div style="text-align: center;">
-                        <img src="figures/2024-05-13-order-model-trend-prediction.png" class="img-fluid"
-                            alt="Order Model Trend Prediction" style="width: 50%;">
+                        <img src="figures/prediction.png" class="img-fluid" alt="Order Model Trend Prediction"
+                            style="width: 50%;">
                     </div>
                     <div style=" text-align: justify;">
                         <p class="m-4" style="font-family: NexusSans Bold; font-size: 1.3rem;">
                             Forecasting is crucial in many financial applications, with market trend forecasting being a
                             prime example. This task demands models that accurately capture and reflect market dynamics.
-                            Traditionally, direct forecasting models are used. The figure above
-                            is Trend Prediction Accuracy. We benchmark the predictive performance of our market
-                            simulation against DeepLOB. For each initial time point, the large market model executes 128
-                            simulations, aggregating the outcomes to determine
-                            the final predicted class. The ground truth is obtained from historical data replay. </p>
+                            Traditionally, direct forecasting models are used. We compare our model with DeepLOB.
+                            The figure above shows the trend prediction accuracy, illustrating that LMM-based
+                            simulations
+                            significantly outperform DeepLOB, highlighting its superior market dynamics understanding.
+                            Additionally, the 1.02 billion-parameter model outperforms the 0.22 billion-parameter model,
+                            indicating that improved validation loss in scaling curve
+                            correlates with enhanced forecasting performance.
+                            It is noteworthy that all forecasting targets can be calculated using simulated trajectories
+                            from MarS, whereas traditional direct forecasting models require separate training for each
+                            target. This underscores the significant advantage of simulation-based forecasting by MarS.
+                        </p>
                     </div>
                 </div>
 
@@ -3845,18 +3847,25 @@
                     </div>
                     <!-- <div class="row"> -->
                     <div style="text-align: center;">
-                        <img src="figures/spread_periods.png" class="img-fluid" alt="Spread">
+                        <img src="figures/detection.png" class="img-fluid" alt="Spread">
                     </div>
                     <div style="max-width: 1000px; margin: 0 auto; text-align: justify;">
                         <p class="m-4" style="font-family: NexusSans Bold; font-size: 1.3rem;">
                             In addition to forecasting future trends, comprehending the current and recent market
                             conditions constitutes a significant category of financial tasks. Regulation particularly
-                            market abuse regulation holds a crucial position in this type of tasks. The
-                            figure above shows spread distribution in different periods of market manipulation. Left:
-                            pre-manipulation period. Middle: manipulation period. Right: post-manipulation period.
-                            Spread during the manipulation period exhibits
-                            a heavier tail and a noticeable peak around spread=1000. Additionally, compared to the pre-
-                            and post-period results, the distribution similarity drops during the manipulation period.
+                            market abuse regulation holds a crucial position in this type of tasks. Based on MarS's
+                            realism in a normal market, a straightforward principle for anomaly detection is that a
+                            quick drop in simulation realism metrics indicates potential anomalies.
+                            We collected replay samples before (left), during (middle) and after (right) the
+                            manipulation, and conducted
+                            simulations by MarS simultaneously. The results are shown on figure above.
+                            While MarS generally performs well to simulate the normal
+                            market, its performance drops during the manipulation, showing a heavier tail and a peak
+                            around spread=1000. These anomalies likely correspond to market manipulation, where
+                            manipulators significantly impact liquidity, widening the spread. These anomalies, less
+                            frequent in normal markets, lead to a performance drop in MarS, suggesting a new detection
+                            approach by monitoring such similarity drops. Consequently, MarS helps investors avoid
+                            anomalies and assists institutions in maintaining market stability.
                         </p>
                     </div>
                 </div>
@@ -3867,10 +3876,19 @@
                             "What IF" Analysis on Market Impact</h2>
                         <div style="padding-bottom: 1%;"></div>
                     </div>
+                    <div style="max-width: 1000px; margin: 0 auto; text-align: justify;">
+                        <p class="m-4" style="font-family: NexusSans Bold; font-size: 1.3rem;">
+                            One of the most important ''What if'' topics in finance is to analyze market impact, the
+                            change in asset prices caused by trading activity.
+                            We attempt to leverage the synthetic data to build data-driven pipeline to discover new laws
+                            to explain market impact and its
+                            long-term dynamics.
+                        </p>
+                    </div>
                     <!-- 副标题 -->
-                    <h3 aria-label="Exploration and Validation of Generated Market Impact"
+                    <h3 aria-label="Analysis of Generated Market Impact"
                         style="font-family: NexusSans Bold; font-size:3rem; text-align: center;">
-                        Exploration and Validation of Generated Market Impact</h3>
+                        Analysis of Generated Market Impact</h3>
                     <div style="padding-bottom: 1%;"></div>
                     <!-- <div class="row"> -->
                     <div style="text-align: center;">
@@ -3882,54 +3900,42 @@
                             We explore the potential market impact using a "What IF" analysis by simulating the
                             effects of different trading strategies under various configurations. Specifically, we use
                             the TWAP strategy with four distinct configurations: L1-P0.1, L1-P0.9, L5-P0.1, and L5-P0.9.
-                            The Time-Weighted Average Price (TWAP) algorithm executes large trade volumes while
-                            minimizing market impact over a specified time frame. The TWAP strategy divides the total
-                            volume to be traded into equal parts that are executed at regular intervals.
-                            In these configurations, "LX" refers to the aggressiveness of the price level (askX), while
-                            "PY" represents the passive volume ratio (PVR).
-                            During the passive period, the strategy places orders at the current bid price (bid1)
-                            with a volume determined by the PVR-Y, aiming to fill orders without significantly altering
-                            the market price.
-                            If passive trading does not achieve the expected volume, the strategy
-                            enters an aggressive phase, placing additional orders at a aggressive price (AP) X to
-                            ensure the desired volume is executed. These agents are
-                            tasked with buying varying volumes over a 5-minute window, with differing starting times and
-                            instructions.
+                            The configuration name LX-PY indicates that the aggressive price (AP) is
+                            askX and the maximum passive volume ratio (PVR) is Y.
                             Our "What IF" analysis yields the following insights:
                         <ul class="m-4" style="font-family: NexusSans Bold; font-size: 1.3rem;">
-                            <li>Despite the different configurations, the synthetic market impact follows a pattern
+                            <li>As shown in figure left-above, despite the different configurations, the synthetic
+                                market impact follows a pattern
                                 similar to the Square-Root-Law model, showing consistency with known market impact
                                 behavior.</li>
 
-                            <li>More aggressive strategies, such as L5-P0.1 and L5-P0.9, result in a larger market
-                                impact
-                                and a higher fulfillment rate.</li>
+                            <li> Agents with more aggressive configurations (L5-P0.1 and L5-P0.9) are
+                                expected to exhibit a larger market impact and achieve a higher fulfillment rate. Our
+                                simulations quantify their differences and confirm these assumptions, as illustrated in
+                                the figure middle-above.
 
-                            <li>Both short-term and long-term market impacts are observed, aligning with empirical
-                                studies
-                                of real-world market data.</li>
+                            <li>The agents generate both short-term and long-term market impacts in MarS, as shown in
+                                the figure right above, similar to observations studied in
+                                previous empirical work. We also observe that agents with a larger
+                                passive volume ratio generate less momentum after trading ends.
                         </ul>
 
                         </p>
                     </div>
-                    <h3 aria-label="Discover New Laws of Market Impact"
+                    <h3 aria-label="New factors beyond Square-Root-Law"
                         style="font-family: NexusSans Bold; font-size:3rem; text-align: center;">
-                        Discover New Laws of Market Impact</h3>
+                        New factors beyond Square-Root-Law</h3>
                     <div style="padding-bottom: 1%;"></div>
                     <!-- <div class="row"> -->
                     <div style="text-align: center;">
                         <img src="figures/volatility-regression-True-factor.png" class="img-fluid" alt="volatility">
                     </div>
-                    <div style="text-align: center;">
-                        <img src="figures/learned_ode.png" class="img-fluid" alt="learning_market_impact"
-                            style="width: 70%;">
-                    </div>
                     <div style="max-width: 1000px; margin: 0 auto; text-align: justify;">
                         <p class="m-4" style="font-family: NexusSans Bold; font-size: 1.3rem;">
                             Market impact is notoriously difficult to predict due to noise and randomness in observed
                             data. Using MarS’s synthetic data, we perform a "What IF" analysis to explore new,
-                            interpretable laws beyond the traditional <a
-                                href="https://www.ram-ai.com/sites/default/files/2022-06/costestim.pdf"
+                            interpretable laws beyond the traditional
+                            <a href="https://www.ram-ai.com/sites/default/files/2022-06/costestim.pdf"
                                 class="custom-link">Square-Root-Law</a>.
                             By constructing a data-driven pipeline and applying genetic algorithms with symbolic
                             regression, we identify three significant factors {<em>resiliency</em>,
@@ -3937,36 +3943,46 @@
                             trading. These factors provide a deeper understanding of how market conditions can shape
                             price movements and
                             execution behavior over time, offering a more nuanced view of trading dynamics.
-                            In addition to uncovering these factors, we develop an Ordinary Differential Equation
-                            (ODE) model (as shown in <a href="#ode-equation" class="custom-link">Equation below</a>) to
-                            capture the decay of
-                            market
-                            impact after
-                            trades are executed. This ODE integrates the newly identified factors and decay functions,
-                            offering a more accurate representation of how market impact diminishes or persists over
-                            time. A comparison of our learned ODE with empirical formulas shows that our approach better
-                            captures the complexity of market impact, particularly when traditional models fail to
-                            account for higher-order effects.
-                            Through this "What IF" exploration, MarS reveals previously hidden factors and provides a
-                            robust foundation for modeling market impact in a more predictive and actionable way.
                         </p>
+                    </div>
+
+                    <h3 aria-label="Dynamics of Long-Term Market Impact"
+                        style="font-family: NexusSans Bold; font-size:3rem; text-align: center;">
+                        Dynamics of Long-Term Market Impact</h3>
+                    <div style="padding-bottom: 1%;"></div>
+                    <div style="text-align: center;">
+                        <img src="figures/learned_ode.png" class="img-fluid" alt="learning_market_impact"
+                            style="width: 70%;">
+                    </div>
+                    <div style="max-width: 1000px; margin: 0 auto; text-align: justify;">
                         <p class="m-4" style="font-family: NexusSans Bold; font-size: 1.3rem;">
+                            The long-term market impact, also known as price impact trajectory, typically manifests as a
+                            gradually decaying sequence of price fluctuation after a trade.
+                            We develop an Ordinary Differential Equation
+                            (ODE) model (as shown in <a href="#ode-equation" class="custom-link">Equation </a>) below to
+                            capture the decay of market impact after trades are executed.
                             Our method models the decay of market impact using an ordinary differential equation(ODE),
                             which integrates both potential influencing factors and decay functions:
-                        </p>
                         <div id="ode-equation" class="m-4" style="font-family: NexusSans Bold; font-size: 1.3rem;">
                             $$\frac{dY(t)}{dt} = \text{sum}( W \circ (X \otimes F^{\text{decay}}(t))) =
                             \sum_{i=1}^{m}\sum_{j=1}^{n} W_{i,j} X_i F_j^{\text{decay}}(t),$$
                         </div>
                         <p class="m-4" style="font-family: NexusSans Bold; font-size: 1.3rem;">
-                            where $Y(t)$ is the after-trading market impact, $(X \in \mathbb{R}^m)$ represents key
-                            influencing factors, such as volume, price, etc., and $F_{\text{decay}}(t): t \rightarrow
-                            \mathbb{R}^n $ includes possible decay functions, e.g., $F^{\text{decay}}(t) = [1/t, \ldots,
-                            1/sqrt(t) ]$. Both $X$ and $F^{\text{decay}}(t)$ can be customized based on domain
-                            knowledge. $\otimes$ is the outer product, $\circ$ is the Hadamard product, $X^{T} \otimes
-                            F_{\text{decay}}(t)$ is a matrix with size $\mathbb{R}^{n \times m}$, representing
-                            interactions among factors and decay patterns, and \(W \in \mathbb{R}^{n\times m}\) is the
-                            learnable weights of interactions.
+                            where $Y(t)$ is the long-term market impact, $X \in \mathbb{R}^m$ is the factor group, such
+                            as volume, price, etc., and $F^{\text{decay}}(t): t \rightarrow \mathbb{R}^n $ includes
+                            possible decay functions, e.g., $ [1/t, \ldots, 1/\sqrt{t}]$. $X$ and $F^{\text{decay}}(t)$
+                            can be customized based on domain knowledge. $\otimes$ is the outer product, $\circ$ is the
+                            Hadamard product, $X^{T} \otimes F^{\text{decay}}(t)$ is a matrix with size $\mathbb{R}^{n
+                            \times m}$, representing interactions among factors and decay patterns, and \(W \in
+                            \mathbb{R}^{n \times m}\) is the learnable interaction weight.
+                            <a href="#ode-equation" class="custom-link">Equation </a>can explain how factors with
+                            different decay patterns contribute to
+                            the long-term market impact. The figure left-above illustrates the
+                            auto-correlation of the synthetic market impact decay, and trajectories predicted by the
+                            learned ODE, and the base ODE from empirical formulas. The figure right-above shows the
+                            learned weights $W$,
+                            demonstrating the importance of interaction pairs of two decay functions and seven factors,
+                            which can help to deepen our understanding of the long-term market impact.
                         </p>
                     </div>
 
@@ -3997,6 +4013,9 @@
                             fluctuations between 2~6 BP are attributed to the agent exploring various
                             strategies between high and low fulfillment rates, resulting in corresponding variations in
                             price advantage based on the current reward setting.
+                            This demonstration highlights that MarS is capable of training trading agents from scratch
+                            by leveraging its realistic and interactive simulation capabilities. A more comprehensive
+                            training design could yield even stronger performance.
                         </p>
                     </div>
                 </div>
@@ -4012,21 +4031,18 @@
                 </div>
                 <div class="image-container">
                     <div style="text-align: center;">
-                        <img src="figures/High-level Overview png.png" class="img-fluid" alt="Framework">
+                        <img src="figures/High-level Overview 3to1 png.png" class="img-fluid" alt="Framework">
                     </div>
                     <div style=" text-align: justify;">
                         <p class="m-4" style="font-family: NexusSans Bold; font-size: 1.3rem;">
                             MarS is powered by a generative foundation model (LMM) trained on order-level historical
-                            financial market data. During real-time simulation, LMM dynamically generates order
-                            series
-                            in response to various conditions, including user-submitted interactive
-                            orders, vague target scenario descriptions, and current/recent market data. These
-                            generated
-                            order series, combined with user interactive orders, are matched in a simulated clearing
-                            house in real-time, producing fine-grained
-                            simulated market trajectories. The flexibility of LMM’s order generation enables MarS to
-                            support various downstream applications, such as forecasting, detection/warning systems,
-                            analysis platforms, and agent training environments.
+                            financial market data. During real-time simulation, LMM dynamically generates order series
+                            in response to various conditions, including user-injected interactive orders, vague target
+                            scenario descriptions, and current/recent market data. These generated order series,
+                            combined with user interactive orders, are matched in a simulated clearing house in
+                            real-time, producing fine-grained simulated market trajectories. The flexibility of LMM's
+                            order generation enables MarS to support various downstream applications, such as
+                            forecasting, detection systems, analysis platforms, and agent training environments.
                         </p>
                     </div>
                 </div>
