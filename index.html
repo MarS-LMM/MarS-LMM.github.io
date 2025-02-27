@@ -3721,9 +3721,10 @@
                 <div class="css-rhpgco">
                     <div class="css-avehtb">
                         <div class="css-b8n9y9" style="text-align: center;">
-                            <h1 aria-label="MarS" class="css-s855ri" style="font-family:'Segoe Pro'; font-size:3rem;">
-                                <span style="font-weight: bold;">MarS</span>:<br>
-                                <span style="font-size: 3rem;">
+                            <h1 aria-label="MarS" class="css-s855ri" style="font-family:'Segoe Pro';">
+                                <img src="figures/MarS_logo.png" alt="MarS"
+                                    style="height: 80px; margin-bottom: 10px;"><br>
+                                <span style="font-size: 1rem;">
                                     a Financial Market Simulation Engine
                                     <br>Powered by
                                     Generative
@@ -3735,6 +3736,19 @@
                                 [Paper]</a>
                             <a href="https://github.com/microsoft/MarS" target="_blank" class="css-b8n9y9"
                                 style="font-weight: bold; font-size: 1.3rem; margin-right: 20px; color: #006ee5;">[Code]</a>
+                            <div style="font-size: 1.3rem; margin-top: 20px;">
+                                <a href="mailto:junli@microsoft.com">Junjie Li</a><sup>*</sup>,
+                                <a href="mailto:yangliu2@microsoft.com">Yang Liu</a><sup>*</sup>,
+                                <a href="mailto:weiqing.liu@microsoft.com">Weiqing Liu</a><sup>†</sup>,
+                                <a href="mailto:fangshikai@microsoft.com">Shikai Fang</a>,
+                                <a href="mailto:lewen.wang@microsoft.com">Lewen Wang</a>,
+                                <a href="mailto:chanx@microsoft.com">Chang Xu</a>,
+                                <a href="mailto:jiang.bian@microsoft.com">Jiang Bian</a>
+                            </div>
+                            <div style="font-size: 1.3rem; margin-top: 10px;">
+                                Microsoft Research Asia
+                            </div>
+
                         </div>
                         <div style="display: flex; justify-content: center; align-items: center;">
                             <select class="form-select form-select-lg mb-3 custom-select"
@@ -3791,6 +3805,7 @@
                             demonstrating MarS's ``paradigm shift'' potential for a variety of financial applications.
                         </p>
                     </div>
+
             </section>
 
             <!-- <div style="background:rgba(250, 253, 93, 1)"> -->
@@ -3933,7 +3948,7 @@
                     <div style="max-width: 1000px; margin: 0 auto; text-align: justify;">
                         <p class="m-4" style="font-family: NexusSans Bold; font-size: 1.3rem;">
                             Market impact is notoriously difficult to predict due to noise and randomness in observed
-                            data. Using MarS’s synthetic data, we perform a "What IF" analysis to explore new,
+                            data. Using MarS's synthetic data, we perform a "What IF" analysis to explore new,
                             interpretable laws beyond the traditional
                             <a href="https://www.ram-ai.com/sites/default/files/2022-06/costestim.pdf"
                                 class="custom-link">Square-Root-Law</a>.
@@ -4058,11 +4073,11 @@
                     <div style="padding-bottom: 1%;"></div>
                     <div style="max-width: 1000px; margin: 0 auto; text-align: justify;">
                         <p class="m-4" style="font-family: NexusSans Bold; font-size: 1.3rem;">
-                            We thoroughly evaluate MarS’s capabilities across five key areas: scalability, realism,
+                            We thoroughly evaluate MarS's capabilities across five key areas: scalability, realism,
                             controllability, interactivity, and the balance between control and interaction. These
-                            experiments are designed to test MarS’s performance in generating realistic market
+                            experiments are designed to test MarS's performance in generating realistic market
                             simulations, its adaptability to predefined conditions, and its ability to model dynamic
-                            market interactions. Each experiment highlights a critical aspect of MarS’s design,
+                            market interactions. Each experiment highlights a critical aspect of MarS's design,
                             demonstrating its potential for use in practical financial applications.
 
                         </p>
@@ -4106,7 +4121,7 @@
                         </div>
                         <div style=" text-align: justify;">
                             <p class="m-4" style="font-family: NexusSans Bold; font-size: 1.3rem;">
-                                To assess the realism of MarS’s market simulations, we compare simulated data against
+                                To assess the realism of MarS's market simulations, we compare simulated data against
                                 key stylized facts derived from historical market data. These stylized facts serve as
                                 robust benchmarks, ensuring that our simulations accurately reflect real-world
                                 market behaviors. <br> The figure above is illustration of stylized facts: The upper
@@ -4114,7 +4129,7 @@
                                 5-minute log
                                 return distribution, the upper right panel depicts log return auto-correlation, and the
                                 lower right panel illustrates volatility auto-correlation.
-                                The results demonstrate a high level of consistency between MarS’s simulated data and
+                                The results demonstrate a high level of consistency between MarS's simulated data and
                                 real-world market behaviors. These findings confirm that MarS can generate simulations
                                 that closely mirror real market conditions, making it a reliable tool for practical
                                 applications.
@@ -4144,9 +4159,9 @@
                                     whereas the order model shows less correlation. We further compare the correlation
                                     between simulated and replay prices with different
                                     simulated trajectory numbers on the upper-right figure.
-                                    MarS’s ensemble model shows a higher correlation with replayed data than the
+                                    MarS's ensemble model shows a higher correlation with replayed data than the
                                     baseline
-                                    model, even with fewer simulated trajectories. This demonstrates MarS’s
+                                    model, even with fewer simulated trajectories. This demonstrates MarS's
                                     effectiveness in
                                     creating controllable market simulations with minimal computational overhead.
                                 </p>
@@ -4207,6 +4222,23 @@
                                     diverse
                                     simulation needs, making it a versatile platform for both research and practical
                                     use.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div id="Acknowledgment">
+                            <h3 aria-label="Acknowledgment"
+                                style="font-family: NexusSans Bold; font-size:4rem; text-align: center;">
+                                Acknowledgment</h3>
+                        </div>
+                        <div class="image-container">
+                            <div style=" text-align: justify;">
+                                <p class="m-4" style="font-family: NexusSans Bold; font-size: 1.3rem;">
+                                    We thank intern <a href="mailto:pkuwkl@gmail.com">Keli Wen</a> for his valuable
+                                    contributions
+                                    to the MarS project during his internship, particularly in designing and developing
+                                    the demo
+                                    and project website, as well as his innovative technical explorations.
                                 </p>
                             </div>
                         </div>
